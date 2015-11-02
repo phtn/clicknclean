@@ -13,3 +13,24 @@ template(name='homepage')
 			a(href="javascript:void(0)").cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-700 office / commercial
 		div.container
 			a(href="javascript:void(0)").cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-600 Enterprise
+
+		// Modals 
+		// Sign in With
+
+		div.container
+			div.modal#sign-in-with
+				div.modal-dialog
+					div.modal-content
+						div.modal-header
+							button(type='button' data-dismiss='modal' aria-hidden='true').close
+								i.fa.fa-times
+							h4.modal-title Sign in With
+						div.modal-body
+							div.container-fluid
+								button.accounts-btn.btn.btn-default#google 
+									i.fa.fa-google.pull-left
+									span google
+							div.container-fluid
+								button.accounts-btn.btn.btn-default#facebook
+									i.fa.fa-facebook.pull-left
+									span facebook
