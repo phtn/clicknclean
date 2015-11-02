@@ -4,7 +4,7 @@ template(name='homepage')
 			div.jumbotron
 				h3 Superb Cleaning Service
 				p
-					a.btn.btn-primary.btn-lg sign-up now
+					a(data-toggle='modal' data-target='#sign-in-with').btn.btn-primary.btn-lg sign-up now
 		div.container
 			p or get quick estimate		
 		div.container
@@ -18,13 +18,13 @@ template(name='homepage')
 		// Sign in With
 
 		div.container
-			div.modal#sign-in-with
+			div.modal.backdrop.bloom-animate#sign-in-with
 				div.modal-dialog
 					div.modal-content
 						div.modal-header
 							button(type='button' data-dismiss='modal' aria-hidden='true').close
 								i.fa.fa-times
-							h4.modal-title Sign in With
+							h4.modal-title Sign in with
 						div.modal-body
 							div.container-fluid
 								button.accounts-btn.btn.btn-default#google 
