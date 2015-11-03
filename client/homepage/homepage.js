@@ -1,3 +1,5 @@
+
+
 Template.homepage.events({
 	'click #google' () {
 		console.log('google')
@@ -16,4 +18,6 @@ Template.homepage.events({
 	}
 });
 
-$.material.init();
+Template.homepage.rendered = () => {
+	$.material.init()
+}

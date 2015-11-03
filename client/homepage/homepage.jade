@@ -4,9 +4,9 @@ template(name='homepage')
 			div.jumbotron
 				h3 Superb Cleaning Service
 				p
-					a(data-toggle='modal' data-target='#sign-in-with').btn.btn-primary.btn-lg sign-up now
+					a(data-toggle='modal' data-target='#sign-in-with').btn.btn-material-light-blue-900.btn-lg sign-up now
 		div.container
-			p or get quick a estimate		
+			p or get a quick estimate		
 		div.container
 			a(data-toggle='modal' data-target='#residential-modal').cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-800#residential       Residential
 		div.container
@@ -48,39 +48,38 @@ template(name='homepage')
 							button(type='button' data-dismiss='modal' aria-hidden='true').close
 								i.fa.fa-times
 							h4.modal-title Residential Estimate
+							+test
 						div.modal-body
-							div.container-fluid
-								div.list-group
-									div.list-group-item
-										div.btn-group.btn-group-justified
-											a.btn.btn-material-light-blue-800
-												i.fa.fa-minus
-											a.btn.btn-material-light-blue-50.disabled 1 Bedroom
-											a.btn.btn-material-light-blue-800
-												i.fa.fa-plus
-									br
-									div.list-group-item
-										div.container-fluid
-										div.btn-group.btn-group-justified
-											a.btn.btn-material-light-blue-700
-												i.fa.fa-minus
-											a.btn.btn-material-light-blue-50.disabled 1 Bathroom
-											a.btn.btn-material-light-blue-700
-												i.fa.fa-plus
-									br
-									div.list-group-item
-										div.container-fluid
-										div.btn-group.btn-group-justified
-											a.btn.btn-material-light-blue-700
-												i.fa.fa-minus
-											a.btn.btn-material-light-blue-50.disabled 1 Livingroom
-											a.btn.btn-material-light-blue-700
-												i.fa.fa-plus
-									br
-									div.list-group-item
-										div.container-fluid
-											div.btn-group.btn-group-justified
-												a.btn.btn-material-light-blue-50
-													div.mdi-toggle-check-box-outline-blank
-													span.lbl-modal KITCHEN
+							div.list-group
+								div.list-group-item
+									div.btn-group.btn-group-justified
+										a.btn.btn-material-light-blue-800
+											i.fa.fa-minus
+										a.btn.btn-material-light-blue-50.disabled 1 
+										a.btn.btn-material-light-blue-50.disabled.text-left BR
+										a.btn.btn-material-light-blue-800.btn-active
+											i.fa.fa-plus
+								br
+								div.list-group-item
+									div.btn-group.btn-group-justified
+										a.btn.btn-material-light-blue-700
+											i.fa.fa-minus
+										a.btn.btn-material-light-blue-50.disabled 1 BATH
+										a.btn.btn-material-light-blue-700
+											i.fa.fa-plus
+								br
+								div.list-group-item
+									div.btn-group.btn-group-justified
+										a.btn.btn-material-light-blue-600
+											i.fa.fa-minus
+										a.btn.btn-material-light-blue-50.disabled 1 LR
+										a.btn.btn-material-light-blue-600
+											i.fa.fa-plus
+								br
+								div.list-group-item
+									div.container-fluid
+										div.checkbox
+											label
+												input(type='checkbox')
+												span kitchen	
 										
