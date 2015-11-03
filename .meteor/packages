@@ -23,3 +23,6 @@ kadira:blaze-layout
 stylus
 fortawesome:fontawesome
 fezvrasta:bootstrap-material-design-fullpalette
+service-configuration
+accounts-google
+accounts-facebook

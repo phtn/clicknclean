@@ -1,2 +1,2 @@
-$.material.init();
-$.material.ripples()
+$.material.init()
+$.material.ripples('.btn')

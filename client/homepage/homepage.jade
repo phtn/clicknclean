@@ -6,19 +6,20 @@ template(name='homepage')
 				p
 					a(data-toggle='modal' data-target='#sign-in-with').btn.btn-primary.btn-lg sign-up now
 		div.container
-			p or get quick estimate		
+			p or get quick a estimate		
 		div.container
-			a(href="javascript:void(0)").cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-800        Residential
+			a(data-toggle='modal' data-target='#residential-modal').cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-800#residential       Residential
 		div.container
-			a(href="javascript:void(0)").cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-700 office / commercial
+			a(href="javascript:void(0)").cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-700#office office / commercial
 		div.container
-			a(href="javascript:void(0)").cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-600 Enterprise
+			a(href="javascript:void(0)").cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-600#enterprise Enterprise
 
 		// Modals 
+
 		// Sign in With
 
 		div.container
-			div.modal.backdrop.bloom-animate#sign-in-with
+			div.modal.backdrop.up-animate#sign-in-with
 				div.modal-dialog
 					div.modal-content
 						div.modal-header
@@ -27,10 +28,59 @@ template(name='homepage')
 							h4.modal-title Sign in with
 						div.modal-body
 							div.container-fluid
-								button.accounts-btn.btn.btn-default#google 
+								button.accounts-btn.btn.btn-default#google
 									i.fa.fa-google.pull-left
 									span google
 							div.container-fluid
 								button.accounts-btn.btn.btn-default#facebook
 									i.fa.fa-facebook.pull-left
 									span facebook
+
+		// Estimate
+
+		// Residential
+
+		div.container
+			div.modal.backdrop.up-animate#residential-modal
+				div.modal-dialog
+					div.modal-content
+						div.modal-header
+							button(type='button' data-dismiss='modal' aria-hidden='true').close
+								i.fa.fa-times
+							h4.modal-title Residential Estimate
+						div.modal-body
+							div.container-fluid
+								div.list-group
+									div.list-group-item
+										div.btn-group.btn-group-justified
+											a.btn.btn-material-light-blue-800
+												i.fa.fa-minus
+											a.btn.btn-material-light-blue-50.disabled 1 Bedroom
+											a.btn.btn-material-light-blue-800
+												i.fa.fa-plus
+									br
+									div.list-group-item
+										div.container-fluid
+										div.btn-group.btn-group-justified
+											a.btn.btn-material-light-blue-700
+												i.fa.fa-minus
+											a.btn.btn-material-light-blue-50.disabled 1 Bathroom
+											a.btn.btn-material-light-blue-700
+												i.fa.fa-plus
+									br
+									div.list-group-item
+										div.container-fluid
+										div.btn-group.btn-group-justified
+											a.btn.btn-material-light-blue-700
+												i.fa.fa-minus
+											a.btn.btn-material-light-blue-50.disabled 1 Livingroom
+											a.btn.btn-material-light-blue-700
+												i.fa.fa-plus
+									br
+									div.list-group-item
+										div.container-fluid
+											div.btn-group.btn-group-justified
+												a.btn.btn-material-light-blue-50
+													div.mdi-toggle-check-box-outline-blank
+													span.lbl-modal KITCHEN
+										
