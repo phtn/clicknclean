@@ -8,18 +8,18 @@ template(name='homepage')
 		div.container
 			p or get a quick estimate		
 		div.container
-			a(data-toggle='modal' data-target='#residential-modal').cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-800#residential       Residential
+			a(data-toggle='modal' data-ripple-color="#000" data-target='#residential-modal').cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-800#residential       Residential
 		div.container
-			a(href="javascript:void(0)").cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-700#office office / commercial
+			a(href="javascript:void(0)" data-ripple-color="#000").cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-700#office office / commercial
 		div.container
-			a(href="javascript:void(0)").cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-600#enterprise Enterprise
+			a(href="javascript:void(0)" data-ripple-color="#000").cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-600#enterprise Enterprise
 
 		// Modals 
 
 		// Sign in With
 
 		div.container
-			div.modal.backdrop.up-animate#sign-in-with
+			div.modal.backdrop.fade#sign-in-with
 				div.modal-dialog
 					div.modal-content
 						div.modal-header
@@ -41,45 +41,84 @@ template(name='homepage')
 		// Residential
 
 		div.container
-			div.modal.backdrop.up-animate#residential-modal
+			div.modal.backdrop.fade#residential-modal
 				div.modal-dialog
 					div.modal-content
 						div.modal-header
 							button(type='button' data-dismiss='modal' aria-hidden='true').close
 								i.fa.fa-times
 							h4.modal-title Residential Estimate
-							+test
 						div.modal-body
-							div.list-group
-								div.list-group-item
-									div.btn-group.btn-group-justified
-										a.btn.btn-material-light-blue-800
-											i.fa.fa-minus
-										a.btn.btn-material-light-blue-50.disabled 1 
-										a.btn.btn-material-light-blue-50.disabled.text-left BR
-										a.btn.btn-material-light-blue-800.btn-active
-											i.fa.fa-plus
-								br
-								div.list-group-item
-									div.btn-group.btn-group-justified
-										a.btn.btn-material-light-blue-700
-											i.fa.fa-minus
-										a.btn.btn-material-light-blue-50.disabled 1 BATH
-										a.btn.btn-material-light-blue-700
-											i.fa.fa-plus
-								br
-								div.list-group-item
-									div.btn-group.btn-group-justified
-										a.btn.btn-material-light-blue-600
-											i.fa.fa-minus
-										a.btn.btn-material-light-blue-50.disabled 1 LR
-										a.btn.btn-material-light-blue-600
-											i.fa.fa-plus
-								br
-								div.list-group-item
-									div.container-fluid
-										div.checkbox
-											label
-												input(type='checkbox')
-												span kitchen	
-										
+							ul.nav.nav-tabs#light
+								li.pull-left
+									p COST ESTIMATE
+								li.pull-right
+									i.fa.fa-dollar#price-estimate &nbsp; #{priceEstimate}
+							br
+							ul.nav.nav-tabs#light
+								li.pull-left
+									p DURATION
+								li.pull-right
+									i.fa.fa-clock-o#duration-estimate &nbsp; #{durationEstimate} hrs
+							br
+							ul.nav.nav-tabs.nav-justified#darkest
+								li#minus-bedroom
+									a
+										i.fa.fa-minus
+								li
+									a.disabled.withoutripple #{bedroomCount} BEDROOM
+								li#plus-bedroom
+									a
+										i.fa.fa-plus
+							br
+							ul.nav.nav-tabs.nav-justified#darker
+								li#minus-bathroom
+									a
+										i.fa.fa-minus
+								li
+									a.disabled.withoutripple #{bathroomCount} BATHROOM
+								li#plus-bathroom
+									a
+										i.fa.fa-plus
+							br
+							ul.nav.nav-tabs.nav-justified#dark
+								li#minus-livingroom
+									a
+										i.fa.fa-minus
+								li
+									a.disabled.withoutripple #{livingroomCount} LIVING ROOM
+								li#plus-livingroom
+									a
+										i.fa.fa-plus
+							br
+							ul.nav.nav-tabs#light
+								li.pull-left
+									p KITCHEN
+								li.pull-right
+									div.checkbox
+										label
+											input(type='checkbox').checked#kitchen-estimate
+							br
+							ul.nav.nav-tabs#light
+								li.pull-left
+									p BASEMENT
+								li.pull-right
+									div.checkbox
+										label
+											input(type='checkbox').checked
+							br
+							ul.nav.nav-tabs#light
+								li.pull-left
+									p GARAGE
+								li.pull-right
+									div.checkbox
+										label
+											input(type='checkbox')
+							br
+							ul.nav.nav-tabs#light
+								li.pull-left
+									p YARD
+								li.pull-right
+									div.checkbox
+										label
+											input(type='checkbox')
