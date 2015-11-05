@@ -85,9 +85,9 @@ Template.homepage.rendered = () => {
 	Session.set('bathroom-count', 1 )
 	Session.set('livingroom-count', 1 )
 	Tracker.autorun(() => {
-		Session.set('price-estimate', Session.get('other-room-estimate') + (Session.get('bedroom-count')*20 + Session.get('bathroom-count')*20 + Session.get('livingroom-count')*20 ))
-		Session.set('duration-estimate', Math.round((Session.get('bedroom-count')*.6 + Session.get('bathroom-count')*.6 + Session.get('livingroom-count')*.6 )))
-		
+		Session.set('price-estimate', (Session.get('other-room-estimate') || 0) + (Session.get('bedroom-count')*20 + Session.get('bathroom-count')*20 + Session.get('livingroom-count')*20 ))
+		Session.set('duration-estimate', Math.round((Session.get('bedroom-count')*.5 + Session.get('bathroom-count')*.5 + Session.get('livingroom-count')*.5 ) + (Session.get('duration-estimate-b') || 0 ) ))
+
 	});
 	
 }
@@ -112,15 +112,17 @@ function check (room) {
 	if ($(room).hasClass('checked')) {
 			$(room).removeClass('checked')
 			console.log('not checked')
+			Session.set('duration-estimate-b', Session.get('duration-estimate-b') - .7)
 		} else {
 			$(room).addClass('checked')
 			console.log('checked')
+			Session.set('duration-estimate-b', (Session.get('duration-estimate-b') || 0) + .7)
 		}
 }
 
 function addPriceEstimate (room, price) {
 	if ($(room).hasClass('checked')) {
-			Session.set('other-room-estimate', Session.get('other-room-estimate') + price)
+			Session.set('other-room-estimate', (Session.get('other-room-estimate') || 0) + price)
 		} else {
 			Session.set('other-room-estimate', Session.get('other-room-estimate') - price)
 		}
