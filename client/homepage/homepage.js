@@ -42,14 +42,20 @@ Template.homepage.events({
 		plus('livingroom-count')
 	},
 	'click #kitchen-estimate' () {
-		
-		if ($('#kitchen-estimate').hasClass('checked')) {
-			$('#kitchen-estimate').addClass('checked')
-			console.log('checked')
-		} else {
-			$('#kitchen-estimate').removeClass('checked')
-			console.log('not checked')
-		}
+		check ('#kitchen-estimate')
+		addPriceEstimate ('#kitchen-estimate', 45)
+	},
+	'click #basement-estimate' () {
+		check ('#basement-estimate')
+		addPriceEstimate ('#basement-estimate', 50)
+	},
+	'click #garage-estimate' () {
+		check ('#garage-estimate')
+		addPriceEstimate ('#garage-estimate', 60)
+	},
+	'click #yard-estimate' () {
+		check ('#yard-estimate')
+		addPriceEstimate ('#yard-estimate', 50)
 	}
 });
 
@@ -79,8 +85,9 @@ Template.homepage.rendered = () => {
 	Session.set('bathroom-count', 1 )
 	Session.set('livingroom-count', 1 )
 	Tracker.autorun(() => {
-		Session.set('price-estimate', (Session.get('bedroom-count')*15 + Session.get('bathroom-count')*15 + Session.get('livingroom-count')*15 ))
+		Session.set('price-estimate', Session.get('other-room-estimate') + (Session.get('bedroom-count')*20 + Session.get('bathroom-count')*20 + Session.get('livingroom-count')*20 ))
 		Session.set('duration-estimate', Math.round((Session.get('bedroom-count')*.6 + Session.get('bathroom-count')*.6 + Session.get('livingroom-count')*.6 )))
+		
 	});
 	
 }
@@ -98,6 +105,23 @@ function plus (room) {
 }
 
 function totalEstimate (roomA, roomB, roomC) {
-	return Session.set('price-estimate', ((15 * roomA) + (15 * roomB) + (15 * roomC)) )
+	return Session.set('price-estimate', ((20 * roomA) + (20 * roomB) + (20 * roomC)) )
 }
 
+function check (room) {
+	if ($(room).hasClass('checked')) {
+			$(room).removeClass('checked')
+			console.log('not checked')
+		} else {
+			$(room).addClass('checked')
+			console.log('checked')
+		}
+}
+
+function addPriceEstimate (room, price) {
+	if ($(room).hasClass('checked')) {
+			Session.set('other-room-estimate', Session.get('other-room-estimate') + price)
+		} else {
+			Session.set('other-room-estimate', Session.get('other-room-estimate') - price)
+		}
+}
