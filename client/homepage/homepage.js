@@ -2,7 +2,14 @@
 
 Template.homepage.events({
 	'click #google' () {
-		console.log('google')
+		console.log('google');
+		Meteor.loginWithGoogle({
+			requestPermission: ['email','profile']
+		}, function(err) {
+			if (err) {
+				// ERROR
+			}
+		});
 	},
 	'click #facebook' () {
 		console.log('facebook')
@@ -62,6 +69,7 @@ Template.homepage.helpers({
 	durationEstimate () {
 		return Session.get('duration-estimate')
 	}
+	
 
 });
 

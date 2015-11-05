@@ -5,4 +5,7 @@ template(name='nav')
 				div.col-xs-6
 					h4.brand click n' clean
 				div.col-xs-6
-					i(data-toggle='modal' data-target='#sign-in-with').fa.fa-user.nav-user.pull-right
+					if currentUser
+						span.badge.pull-right#name #{user}
+					else
+						i(data-toggle='modal' data-target='#sign-in-with').fa.fa-user.nav-user.pull-right
