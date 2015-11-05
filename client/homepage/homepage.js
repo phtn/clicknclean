@@ -1,4 +1,6 @@
-
+Template.homepage.onCreated(()=> {
+	Blaze._allowJavascriptUrls();
+});
 
 Template.homepage.events({
 	'click #google' () {
@@ -13,6 +15,13 @@ Template.homepage.events({
 	},
 	'click #facebook' () {
 		console.log('facebook')
+		Meteor.loginWithFacebook({
+			requestPermission: ['email','public_profile', 'user-friends']
+		}, function(err) {
+			if (err) {
+				// ERROR
+			}
+		});
 	},
 	'click #residential' () {
 		console.log('residential')	
