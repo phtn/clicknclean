@@ -19,6 +19,11 @@ Meteor.methods({
 				{owner: Meteor.userId()},
 				{$inc : {bedroom: -1} }
 			)
+		} else {
+			ResidentialClients.update(
+				{owner: Meteor.userId()},
+				{$set: {bedroom: 0} }
+			)
 		}
 	},
 	plusBedroom (id) {
@@ -35,6 +40,11 @@ Meteor.methods({
 				{owner: Meteor.userId()},
 				{$inc : {bathroom: -1} }
 			)
+		} else {
+			ResidentialClients.update(
+				{owner: Meteor.userId()},
+				{$set: {bathroom: 0} }
+			)
 		}
 	},
 	plusBathroom (id) {
@@ -50,6 +60,11 @@ Meteor.methods({
 			ResidentialClients.update(
 				{owner: Meteor.userId()},
 				{$inc : {livingroom: -1} }
+			)
+		} else {
+			ResidentialClients.update(
+				{owner: Meteor.userId()},
+				{$set: {livingroom: 0} }
 			)
 		}
 	},

@@ -35,7 +35,7 @@ Template.residential.events({
 
 Template.residential.helpers({
 	roomCount () {
-		return ResidentialClients.find({})
+		return ResidentialClients.find({owner: Meteor.userId()})
 	} 
 });
 
