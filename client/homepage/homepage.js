@@ -90,6 +90,9 @@ Template.homepage.helpers({
 
 Template.homepage.rendered = () => {
 	$.material.init()
+	$.material.options = {
+		"withRipples": 'a, a:not(.withoutripples)' 
+	}
 	Session.set('bedroom-count', 1 )
 	Session.set('bathroom-count', 1 )
 	Session.set('livingroom-count', 1 )

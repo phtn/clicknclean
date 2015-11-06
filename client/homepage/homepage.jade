@@ -13,9 +13,9 @@ template(name='homepage')
 			div.container
 				a(data-toggle='modal' data-ripple-color="#000" data-target='#residential-modal').cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-800#residential       Residential
 			div.container
-				a(href="javascript:void(0)" data-ripple-color="#000").cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-700#office office / commercial
+				a(data-toggle='modal' data-ripple-color="#000" data-target='#office-modal').cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-700#office office / commercial
 			div.container
-				a(href="javascript:void(0)" data-ripple-color="#000").cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-600#enterprise Enterprise
+				a(data-toggle='modal' data-ripple-color="#000" data-target='#enterprise-modal').cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-600#enterprise Enterprise
 
 			// Modals 
 
@@ -125,3 +125,25 @@ template(name='homepage')
 										div.checkbox
 											label
 												input(type='checkbox')#yard-estimate
+
+			div.container
+				div.modal.backdrop.fade#office-modal
+					div.modal-dialog
+						div.modal-content
+							div.modal-header
+								button(type='button' data-dismiss='modal' aria-hidden='true').close
+									i.fa.fa-times
+								h4.modal-title Office / Commercial Estimate
+							div.modal-body
+								h3.text-center in progress ...
+
+			div.container
+				div.modal.backdrop.fade#enterprise-modal
+					div.modal-dialog
+						div.modal-content
+							div.modal-header
+								button(type='button' data-dismiss='modal' aria-hidden='true').close
+									i.fa.fa-times
+								h4.modal-title Enterprise Estimate
+							div.modal-body
+								h3.text-center in progress ...

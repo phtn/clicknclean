@@ -9,6 +9,7 @@ Template.nav.helpers({
 Template.nav.events({
 	'click #name' () {
 		Meteor.logout()
+		FlowRouter.go('/')
 	},
 	'click .brand' () {
 		FlowRouter.go('/')

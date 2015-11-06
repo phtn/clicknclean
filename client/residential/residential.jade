@@ -1,8 +1,97 @@
 template(name='residential')
-	h4.text-center Residential
+	div.container-fluid
+		ul.nav.nav-tabs.nav-justified#title-tab
+			li#back-to-main
+				a
+					i.fa.fa-arrow-circle-left.fa-2x
+			li
+				a.disabled.withoutripple
+					h4.title-category.text-center Residential
+			li#plus-bedroom
+				a
+					i.fa.fa-arrow-circle-right.fa-2x
+		
+		
+		
 	br
-	div.container-fluid.text-center
-		+fullcalendar
+	div.container-fluid.alpha-page-div
+		ul.nav.nav-tabs#light
+			li.pull-left
+				p COST ESTIMATE
+			li.pull-right
+				i.fa.fa-dollar#price-estimate &nbsp; #{priceEstimate}
+		br
+		ul.nav.nav-tabs#light
+			li.pull-left
+				p DURATION
+			li.pull-right
+				i.fa.fa-clock-o#duration-estimate &nbsp; #{durationEstimate} hrs
+		br
+		ul.nav.nav-tabs.nav-justified#darkest
+			li#minus-bedroom
+				a
+					i.fa.fa-minus
+			li
+				a.disabled.withoutripple #{bedroomCount} BEDROOM
+			li#plus-bedroom
+				a
+					i.fa.fa-plus
+		br
+		ul.nav.nav-tabs.nav-justified#darker
+			li#minus-bathroom
+				a
+					i.fa.fa-minus
+			li
+				a.disabled.withoutripple #{bathroomCount} BATHROOM
+			li#plus-bathroom
+				a
+					i.fa.fa-plus
+		br
+		ul.nav.nav-tabs.nav-justified#dark
+			li#minus-livingroom
+				a
+					i.fa.fa-minus
+			li
+				a.disabled.withoutripple #{livingroomCount} LIVINGROOM
+			li#plus-livingroom
+				a
+					i.fa.fa-plus
+		br
+		ul.nav.nav-tabs#light
+			li.pull-left
+				p KITCHEN
+			li.pull-right
+				div.checkbox
+					label
+						input(type='checkbox')#kitchen-estimate
+		br
+		ul.nav.nav-tabs#light
+			li.pull-left
+				p BASEMENT
+			li.pull-right
+				div.checkbox
+					label
+						input(type='checkbox')#basement-estimate
+		br
+		ul.nav.nav-tabs#light
+			li.pull-left
+				p GARAGE
+			li.pull-right
+				div.checkbox
+					label
+						input(type='checkbox')#garage-estimate
+		br
+		ul.nav.nav-tabs#light
+			li.pull-left
+				p YARD
+			li.pull-right
+				div.checkbox
+					label
+						input(type='checkbox')#yard-estimate
+
+
+
+
 	//div.container-fluid.text-center.input-group.datetimepicker
 		span.input-group-addon
 		input(type='text').set-due-date.form-control
