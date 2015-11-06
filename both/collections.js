@@ -1,0 +1,1 @@
+ResidentialClients = new Mongo.Collection('clients');

@@ -65,32 +65,32 @@ template(name='homepage')
 										i.fa.fa-clock-o#duration-estimate &nbsp; #{durationEstimate} hrs
 								br
 								ul.nav.nav-tabs.nav-justified#darkest
-									li#minus-bedroom
+									li#minus-bedroom-estimate
 										a
 											i.fa.fa-minus
 									li
 										a.disabled.withoutripple #{bedroomCount} BEDROOM
-									li#plus-bedroom
+									li#plus-bedroom-estimate
 										a
 											i.fa.fa-plus
 								br
 								ul.nav.nav-tabs.nav-justified#darker
-									li#minus-bathroom
+									li#minus-bathroom-estimate
 										a
 											i.fa.fa-minus
 									li
 										a.disabled.withoutripple #{bathroomCount} BATHROOM
-									li#plus-bathroom
+									li#plus-bathroom-estimate
 										a
 											i.fa.fa-plus
 								br
 								ul.nav.nav-tabs.nav-justified#dark
-									li#minus-livingroom
+									li#minus-livingroom-estimate
 										a
 											i.fa.fa-minus
 									li
 										a.disabled.withoutripple #{livingroomCount} LIVINGROOM
-									li#plus-livingroom
+									li#plus-livingroom-estimate
 										a
 											i.fa.fa-plus
 								br
@@ -98,9 +98,9 @@ template(name='homepage')
 									li.pull-left
 										p KITCHEN
 									li.pull-right
-										div.checkbox
+										div.checkbox.withoutripple
 											label
-												input(type='checkbox')#kitchen-estimate
+												input(type='checkbox').withoutripple#kitchen-estimate
 								br
 								ul.nav.nav-tabs#light
 									li.pull-left
@@ -108,7 +108,7 @@ template(name='homepage')
 									li.pull-right
 										div.checkbox
 											label
-												input(type='checkbox')#basement-estimate
+												input(type='checkbox').withoutripples#basement-estimate
 								br
 								ul.nav.nav-tabs#light
 									li.pull-left
@@ -116,7 +116,7 @@ template(name='homepage')
 									li.pull-right
 										div.checkbox
 											label
-												input(type='checkbox')#garage-estimate
+												input(type='checkbox').withoutripples#garage-estimate
 								br
 								ul.nav.nav-tabs#light
 									li.pull-left
@@ -124,7 +124,7 @@ template(name='homepage')
 									li.pull-right
 										div.checkbox
 											label
-												input(type='checkbox')#yard-estimate
+												input(type='checkbox').withoutripples#yard-estimate
 
 			div.container
 				div.modal.backdrop.fade#office-modal

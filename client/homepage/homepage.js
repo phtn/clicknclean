@@ -24,7 +24,7 @@ Template.homepage.events({
 		});
 	},
 	'click #residential' () {
-		console.log('residential')	
+		console.log('residential');
 	},
 	'click #office' () {
 		console.log('office')
@@ -32,23 +32,23 @@ Template.homepage.events({
 	'click #enterprise' () {
 		console.log('enterprise')
 	},
-	'click #minus-bedroom' () {
-		minus('bedroom-count')
+	'click #minus-bedroom-estimate' () {
+		minusEstimate('bedroom-count')
 	},
-	'click #plus-bedroom' () {
-		plus('bedroom-count')
+	'click #plus-bedroom-estimate' () {
+		plusEstimate('bedroom-count')
 	},
-	'click #minus-bathroom' () {
-		minus('bathroom-count')
+	'click #minus-bathroom-estimate' () {
+		minusEstimate('bathroom-count')
 	},
-	'click #plus-bathroom' () {
-		plus('bathroom-count')
+	'click #plus-bathroom-estimate' () {
+		plusEstimate('bathroom-count')
 	},
-	'click #minus-livingroom' () {
-		minus('livingroom-count')
+	'click #minus-livingroom-estimate' () {
+		minusEstimate('livingroom-count')
 	},
-	'click #plus-livingroom' () {
-		plus('livingroom-count')
+	'click #plus-livingroom-estimate' () {
+		plusEstimate('livingroom-count')
 	},
 	'click #kitchen-estimate' () {
 		check ('#kitchen-estimate')
@@ -89,10 +89,10 @@ Template.homepage.helpers({
 });
 
 Template.homepage.rendered = () => {
-	$.material.init()
+	$.material.init();
 	$.material.options = {
-		"withRipples": 'a, a:not(.withoutripples)' 
-	}
+		"withRipples": 'a, a:not(.withoutripple), input:not(.withoutripple)' 
+	};
 	Session.set('bedroom-count', 1 )
 	Session.set('bathroom-count', 1 )
 	Session.set('livingroom-count', 1 )
@@ -102,9 +102,14 @@ Template.homepage.rendered = () => {
 
 	});
 	
-}
+};
 
-function minus (room) {
+Template.homepage.onRendered( ()=> {
+		$.material.init();
+	}
+);
+
+function minusEstimate (room) {
 	if (Session.get(room) != 0) {
 			Session.set(room, Session.get(room) - 1 )
 		} else {
@@ -112,7 +117,7 @@ function minus (room) {
 		}
 }
 
-function plus (room) {
+function plusEstimate (room) {
 	Session.set(room, Session.get(room) + 1 )
 }
 
@@ -122,20 +127,20 @@ function totalEstimate (roomA, roomB, roomC) {
 
 function check (room) {
 	if ($(room).hasClass('checked')) {
-			$(room).removeClass('checked')
-			console.log('not checked')
-			Session.set('duration-estimate-b', Session.get('duration-estimate-b') - .7)
-		} else {
-			$(room).addClass('checked')
-			console.log('checked')
-			Session.set('duration-estimate-b', (Session.get('duration-estimate-b') || 0) + .7)
-		}
+		$(room).removeClass('checked')
+		console.log('not checked')
+		Session.set('duration-estimate-b', Session.get('duration-estimate-b') - .7)
+	} else {
+		$(room).addClass('checked')
+		console.log('checked')
+		Session.set('duration-estimate-b', (Session.get('duration-estimate-b') || 0) + .7)
+	}
 }
 
 function addPriceEstimate (room, price) {
 	if ($(room).hasClass('checked')) {
-			Session.set('other-room-estimate', (Session.get('other-room-estimate') || 0) + price)
-		} else {
-			Session.set('other-room-estimate', Session.get('other-room-estimate') - price)
-		}
+		Session.set('other-room-estimate', (Session.get('other-room-estimate') || 0) + price)
+	} else {
+		Session.set('other-room-estimate', Session.get('other-room-estimate') - price)
+	}
 }

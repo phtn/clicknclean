@@ -1,8 +1,7 @@
 Meteor.subscribe('showUser');
 Template.nav.helpers({
 	user () {
-		
-		return Meteor.user().profile.name;
+		return getFirstName(Meteor.user().profile.name)
 	}
 });
 
@@ -15,3 +14,10 @@ Template.nav.events({
 		FlowRouter.go('/')
 	}
 });
+
+function getFirstName(name) {
+    if (name.indexOf(' ') === -1)
+        return name;
+    else
+        return name.substr(0, name.indexOf(' '));
+};
