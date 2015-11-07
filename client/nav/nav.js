@@ -7,7 +7,7 @@ Template.nav.helpers({
 
 Template.nav.events({
 	'click #name' () {
-		FlowRouter.go('/user-profile')
+		FlowRouter.go('/profile')
 	},
 	'click .brand' () {
 		FlowRouter.go('/')

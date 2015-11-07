@@ -13,8 +13,8 @@ Meteor.methods({
 		})
 	},
 	minusBedroom (id) {
-		var doc = ResidentialClients.find().fetch();
-		if (doc[0].bedroom != 0) {
+		var doc = ResidentialClients.findOne({owner: id});
+		if (doc.bedroom != 0) {
 			ResidentialClients.update(
 				{owner: Meteor.userId()},
 				{$inc : {bedroom: -1} }
@@ -27,15 +27,15 @@ Meteor.methods({
 		}
 	},
 	plusBedroom (id) {
-		var doc = ResidentialClients.find().fetch();
+		var doc = ResidentialClients.findOne({owner: id});
 			ResidentialClients.update(
 				{owner: Meteor.userId()},
 				{$inc : {bedroom: 1} }
 			)
 	},
 	minusBathroom (id) {
-		var doc = ResidentialClients.find().fetch();
-		if (doc[0].bathroom != 0) {
+		var doc = ResidentialClients.findOne({owner: id});
+		if (doc.bathroom != 0) {
 			ResidentialClients.update(
 				{owner: Meteor.userId()},
 				{$inc : {bathroom: -1} }
@@ -48,15 +48,15 @@ Meteor.methods({
 		}
 	},
 	plusBathroom (id) {
-		var doc = ResidentialClients.find().fetch();
+		var doc = ResidentialClients.findOne({owner: id});
 			ResidentialClients.update(
 				{owner: Meteor.userId()},
 				{$inc : {bathroom: 1} }
 			)
 	},
 	minusLivingroom (id) {
-		var doc = ResidentialClients.find().fetch();
-		if (doc[0].livingroom != 0) {
+		var doc = ResidentialClients.findOne({owner: id});
+		if (doc.livingroom != 0) {
 			ResidentialClients.update(
 				{owner: Meteor.userId()},
 				{$inc : {livingroom: -1} }
@@ -69,11 +69,27 @@ Meteor.methods({
 		}
 	},
 	plusLivingroom (id) {
-		var doc = ResidentialClients.find().fetch();
+		var doc = ResidentialClients.findOne({owner: id});
 			ResidentialClients.update(
 				{owner: Meteor.userId()},
 				{$inc : {livingroom: 1} }
 			)
 	}
+
+	
+
 });
 
+let minus = (room) => {
+	let doc = ResidentialClients.findOne({owner: Meteor.userId()});
+	if (doc.room !== 0) {
+		ResidentialClients.update(
+			{owner: Meteor.userId()},
+			{$inc : {room: -1} }
+		)
+	} 
+};
+
+let test = () => {
+	console.log('global test success')
+}

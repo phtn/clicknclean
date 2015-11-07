@@ -16,3 +16,9 @@ FlowRouter.route('/residential', {
 	}
 });
 
+FlowRouter.route('/profile', {
+	name: "Profile",
+	action(params) {
+		renderThisTemplate('profile')
+	}
+});

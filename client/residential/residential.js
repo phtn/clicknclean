@@ -30,6 +30,9 @@ Template.residential.events({
 	},
 	'click #plus-livingroom' () {
 		Meteor.call('plusLivingroom', Meteor.userId())
+	},
+	'click #kitchen' () {
+		check('#kitchen')
 	}
 });
 
@@ -39,3 +42,14 @@ Template.residential.helpers({
 	} 
 });
 
+function check (room) {
+	if ($(room).hasClass('checked')) {
+		$(room).removeClass('checked')
+		console.log('not checked')
+		// 
+	} else {
+		$(room).addClass('checked')
+		console.log('checked')
+		// 
+	}
+}
