@@ -7,8 +7,7 @@ Template.nav.helpers({
 
 Template.nav.events({
 	'click #name' () {
-		Meteor.logout()
-		FlowRouter.go('/')
+		FlowRouter.go('/user-profile')
 	},
 	'click .brand' () {
 		FlowRouter.go('/')

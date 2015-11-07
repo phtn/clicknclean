@@ -10,7 +10,8 @@ Template.main.rendered = ()=> {
 };
 
 Meteor.subscribe('showUsers');
-Meteor.subscribe('showResidentialClients', Meteor.userId());
+Meteor.subscribe('showResidentialClients');
+
 function addCLient () {
 	if (ResidentialClients.find({owner: Meteor.userId()}).count() === 0) {
 		Meteor.call('insertNewResidentialClient', Meteor.userId())
