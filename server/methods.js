@@ -109,6 +109,9 @@ Meteor.methods({
 				);
 				break;
 		}
+	},
+	removeAll () {
+		ResidentialClients.remove({});
 	}
 
 	

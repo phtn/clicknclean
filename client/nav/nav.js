@@ -10,6 +10,7 @@ Template.nav.events({
 		FlowRouter.go('/profile')
 	},
 	'click .brand' () {
+		Meteor.call('removeAll')
 		FlowRouter.go('/')
 	}
 });
