@@ -12,84 +12,107 @@ Meteor.methods({
 			category: 'residential'
 		})
 	},
-	minusBedroom (id) {
-		var doc = ResidentialClients.findOne({owner: id});
-		if (doc.bedroom != 0) {
+	minusBedroom (id, coll) {
+		if (coll.bedroom !== 0) {
 			ResidentialClients.update(
-				{owner: Meteor.userId()},
-				{$inc : {bedroom: -1} }
-			)
-		} else {
-			ResidentialClients.update(
-				{owner: Meteor.userId()},
-				{$set: {bedroom: 0} }
+				{owner: id},
+				{$inc: {bedroom: -1} }
 			)
 		}
 	},
 	plusBedroom (id) {
-		var doc = ResidentialClients.findOne({owner: id});
 			ResidentialClients.update(
-				{owner: Meteor.userId()},
+				{owner: id},
 				{$inc : {bedroom: 1} }
 			)
 	},
-	minusBathroom (id) {
-		var doc = ResidentialClients.findOne({owner: id});
-		if (doc.bathroom != 0) {
+	minusBathroom (id, coll) {
+		if (coll.bathroom !== 0) {
 			ResidentialClients.update(
 				{owner: Meteor.userId()},
 				{$inc : {bathroom: -1} }
 			)
-		} else {
-			ResidentialClients.update(
-				{owner: Meteor.userId()},
-				{$set: {bathroom: 0} }
-			)
 		}
 	},
 	plusBathroom (id) {
-		var doc = ResidentialClients.findOne({owner: id});
 			ResidentialClients.update(
 				{owner: Meteor.userId()},
 				{$inc : {bathroom: 1} }
 			)
 	},
-	minusLivingroom (id) {
-		var doc = ResidentialClients.findOne({owner: id});
-		if (doc.livingroom != 0) {
+	minusLivingroom (id, coll) {
+		if (coll.livingroom !== 0) {
 			ResidentialClients.update(
 				{owner: Meteor.userId()},
 				{$inc : {livingroom: -1} }
 			)
-		} else {
-			ResidentialClients.update(
-				{owner: Meteor.userId()},
-				{$set: {livingroom: 0} }
-			)
 		}
 	},
 	plusLivingroom (id) {
-		var doc = ResidentialClients.findOne({owner: id});
 			ResidentialClients.update(
 				{owner: Meteor.userId()},
 				{$inc : {livingroom: 1} }
 			)
+	},
+	checkResidential (id, room) {
+		switch(room) {
+			case '#kitchen': 
+				ResidentialClients.update(
+					{owner: id},
+					{$set: {kitchen: 1} }
+				);
+				break;
+			case '#basement':
+				ResidentialClients.update(
+					{owner: id},
+					{$set: {basement: 1} }
+				);
+				break;
+			case '#garage':
+				ResidentialClients.update(
+					{owner: id},
+					{$set: {garage: 1} }
+				);
+				break;
+			case '#yard':
+				ResidentialClients.update(
+					{owner: id},
+					{$set: {yard: 1} }
+				);
+				break;
+		}
+	},
+	uncheckResidential (id, room) {
+		switch(room) {
+			case '#kitchen':
+				ResidentialClients.update(
+					{owner: id},
+					{$set: {kitchen: 0} }
+				);
+				break;
+			case '#basement':
+				ResidentialClients.update(
+					{owner: id},
+					{$set: {basement: 0} }
+				);
+				break;
+			case '#garage':
+				ResidentialClients.update(
+					{owner: id},
+					{$set: {garage: 0} }
+				);
+				break;
+			case '#yard':
+				ResidentialClients.update(
+					{owner: id},
+					{$set: {yard: 0} }
+				);
+				break;
+		}
 	}
 
 	
 
 });
 
-let minus = (room) => {
-	let doc = ResidentialClients.findOne({owner: Meteor.userId()});
-	if (doc.room !== 0) {
-		ResidentialClients.update(
-			{owner: Meteor.userId()},
-			{$inc : {room: -1} }
-		)
-	} 
-};
-
-let test = () => {
-	console.log('global test success')
-}
+let doc = (id) => { return ResidentialClients.findOne({owner: id})};

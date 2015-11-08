@@ -9,6 +9,13 @@ FlowRouter.route('/', {
 	}
 });
 
+FlowRouter.route('/profile', {
+	name: "Profile",
+	action(params) {
+		renderThisTemplate('profile')
+	}
+});
+
 FlowRouter.route('/residential', {
 	name: "Residential",
 	action(params) {
@@ -16,9 +23,10 @@ FlowRouter.route('/residential', {
 	}
 });
 
-FlowRouter.route('/profile', {
-	name: "Profile",
+FlowRouter.route('/date', {
+	name: "Date",
 	action(params) {
-		renderThisTemplate('profile')
+		renderThisTemplate('date')
 	}
 });
+

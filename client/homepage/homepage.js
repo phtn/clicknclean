@@ -97,7 +97,7 @@ Template.homepage.rendered = () => {
 	Session.set('bathroom-count', 1 )
 	Session.set('livingroom-count', 1 )
 	Tracker.autorun(() => {
-		Session.set('price-estimate', (Session.get('other-room-estimate') || 0) + (Session.get('bedroom-count')*20 + Session.get('bathroom-count')*20 + Session.get('livingroom-count')*20 ))
+		Session.set('price-estimate', (Session.get('other-room-estimate') || 0) + (Session.get('bedroom-count')*20 + Session.get('bathroom-count')*25 + Session.get('livingroom-count')*25 ))
 		Session.set('duration-estimate', Math.round((Session.get('bedroom-count')*.5 + Session.get('bathroom-count')*.5 + Session.get('livingroom-count')*.5 ) + (Session.get('duration-estimate-b') || 0 ) ))
 
 	});
@@ -122,7 +122,7 @@ function plusEstimate (room) {
 }
 
 function totalEstimate (roomA, roomB, roomC) {
-	return Session.set('price-estimate', ((20 * roomA) + (20 * roomB) + (20 * roomC)) )
+	return Session.set('price-estimate', ((20 * roomA) + (25 * roomB) + (25 * roomC)) )
 }
 
 function check (room) {

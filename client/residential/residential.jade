@@ -9,7 +9,7 @@ template(name='residential')
 					h4.title-category.text-center.title-category Residential
 			li
 				a.withoutripple
-					i.fa.fa-arrow-circle-right.fa-2x.pull-right
+					i.fa.fa-arrow-circle-right.fa-2x.pull-right#date-residential
 		
 	div.container-fluid.text-center
 		p Tell us which area needs professional cleaning
@@ -17,15 +17,15 @@ template(name='residential')
 	br
 	each roomCount
 		div.container-fluid.alpha-page-div
-			ul.nav.nav-tabs.nav-justified.no-background
+			ul.nav.nav-tabs.nav-justified.sub-title.no-background
 				li
 					p PRICE
 				li
-					i.fa.fa-dollar#price-estimate &nbsp; #{priceEstimate}
+					i.fa.fa-dollar#price-estimate &nbsp; #{priceSubtotalResidential}
 				li
 					p DURATION
 				li
-					p#duration-residential #{durationEstimate} 2 hrs
+					p#duration-residential #{durationResidential} hrs
 			br
 			ul.nav.nav-tabs.nav-justified#darkest
 				li#minus-bedroom
@@ -71,7 +71,7 @@ template(name='residential')
 				li.pull-right
 					div.checkbox
 						label
-							input(type='checkbox')#basement-estimate
+							input(type='checkbox')#basement
 			br
 			ul.nav.nav-tabs#light
 				li.pull-left
@@ -79,7 +79,7 @@ template(name='residential')
 				li.pull-right
 					div.checkbox
 						label
-							input(type='checkbox')#garage-estimate
+							input(type='checkbox')#garage
 			br
 			ul.nav.nav-tabs#lighter
 				li.pull-left
@@ -87,7 +87,7 @@ template(name='residential')
 				li.pull-right
 					div.checkbox
 						label
-							input(type='checkbox')#yard-estimate
+							input(type='checkbox')#yard
 			br
 
 
