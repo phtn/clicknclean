@@ -17,6 +17,7 @@ Template.nav.events({
 		FlowRouter.go('/')
 	},
 	'click #person-x' () {
+		Feedback.provide('tap')
 		if (Session.get('person-x') === 'user') {
 			Session.set('person-x', 'remove')
 			$('#f').fadeIn('fast')
@@ -60,3 +61,10 @@ function getFirstName(name) {
     else
         return name.substr(0, name.indexOf(' '));
 };
+
+Feedback.profiles = {
+	'tap': {
+		sound: '/assets/sound/tap.aif',
+		vibrate: [25]
+	}
+}

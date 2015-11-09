@@ -15,13 +15,14 @@ template(name='date')
 		p Select preferred date of cleaning
 	br
 	div.container-fluid
-		ul.nav.nav-tabs.nav-justified.sub-title.no-background
+		ul.nav.nav-tabs.nav-justified.sub-title.no-background.text-center
 			li
 				p DATE
 			li
-				p TUESDAY
+				p #{day}
 			li
-				p#date-residential #{dateResidential} 11/06
+				p#date-residential #{date}
 	br
+	
 	div.container-fluid.text-center
-		+fullcalendar
+		+fullcalendar(id='#residential-calendar')
