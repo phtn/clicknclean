@@ -8,4 +8,13 @@ template(name='nav')
 					if currentUser
 						span.badge.pull-right#name #{user}
 					else
-						i(data-toggle='modal' data-target='#sign-in-with').fa.fa-user.nav-user.pull-right
+						//i(data-toggle='modal' data-target='#sign-in-with').fa.fa-user.nav-user.pull-right
+						i(class='fa-#{person}').fa.nav-user.pull-right#person-x
+						span.fa-stack.pull-right.accounts#f
+							i.fa.fa-circle.fa-stack-2x#facebook-background
+							i.fa.fa-facebook.fa-stack-1x.fa-inverse#facebook
+						span.fa-stack.pull-right.accounts#g
+							i.fa.fa-circle.fa-stack-2x#google-background
+							i.fa.fa-google.fa-stack-1x.fa-inverse#google
+						
+						

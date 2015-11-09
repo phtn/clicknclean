@@ -94,31 +94,35 @@ let clickRoom = (room) => {
 }
 
 let priceSubtotal = () => {
-	let doc = ResidentialClients.findOne({owner: Meteor.userId()});
-	let subtotal =
-		(
-			(doc.bedroom * 20) +
-			(doc.bathroom * 25) +
-			(doc.livingroom * 25) +
-			(doc.kitchen * 45) +
-			(doc.basement * 50) +
-			(doc.garage * 60) +
-			(doc.yard * 50)
-		);
-	return subtotal;
+	if (Meteor.user()){
+		let doc = ResidentialClients.findOne({owner: Meteor.userId()});
+		let subtotal =
+			(
+				(doc.bedroom * 20) +
+				(doc.bathroom * 25) +
+				(doc.livingroom * 25) +
+				(doc.kitchen * 45) +
+				(doc.basement * 50) +
+				(doc.garage * 60) +
+				(doc.yard * 50)
+			);
+		return subtotal;
+	}
 }
 
 let duration = () => {
-	let doc = ResidentialClients.findOne({owner: Meteor.userId()});
-	let duration =
-		(
-			(doc.bedroom * .5) +
-			(doc.bathroom * .5) +
-			(doc.livingroom * .5) +
-			(doc.kitchen * .7) +
-			(doc.basement * .7) +
-			(doc.garage * .7) +
-			(doc.yard * .7)
-		);
-	return Math.round(duration);	
+	if (Meteor.user()) {
+		let doc = ResidentialClients.findOne({owner: Meteor.userId()});
+		let duration =
+			(
+				(doc.bedroom * .5) +
+				(doc.bathroom * .5) +
+				(doc.livingroom * .5) +
+				(doc.kitchen * .7) +
+				(doc.basement * .7) +
+				(doc.garage * .7) +
+				(doc.yard * .7)
+			);
+		return Math.round(duration);	
+	}
 }
