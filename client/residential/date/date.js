@@ -2,8 +2,9 @@ Template.date.events({
 	'click #rooms' () {
 		FlowRouter.go('/residential')
 	},
-	'click td.fc-day-number' () {
-		}
+	'click #time' () {
+		FlowRouter.go('/time')	
+	}
 });
 
 Template.date.helpers({

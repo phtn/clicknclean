@@ -30,3 +30,10 @@ FlowRouter.route('/date', {
 	}
 });
 
+FlowRouter.route('/time', {
+	name: "Time",
+	action(params) {
+		renderThisTemplate('time')
+	}
+});
+

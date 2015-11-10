@@ -9,11 +9,11 @@ template(name='date')
 					h4.title-category.text-center.title-category Residential
 			li
 				a.withoutripple
-					i.fa.fa-arrow-circle-right.fa-2x.pull-right
+					i.fa.fa-arrow-circle-right.fa-2x.pull-right#time
 	
 	div.container-fluid.text-center
 		p Select preferred date of cleaning
-	div.container-fluid
+	div.container-fluid.alpha-page-div
 		ul.nav.nav-tabs.nav-justified.sub-title.no-background.text-center
 			li
 				p DATE
@@ -23,5 +23,5 @@ template(name='date')
 				p#date-residential #{date}
 	br
 	
-	div.container-fluid.text-center
+	div.container-fluid.calendar.text-center
 		+fullcalendar(id='#residential-calendar')

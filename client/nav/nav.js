@@ -18,10 +18,11 @@ Template.nav.events({
 	},
 	'click #person-x' () {
 		Feedback.provide('tap')
+
 		if (Session.get('person-x') === 'user') {
 			Session.set('person-x', 'remove')
 			$('#f').fadeIn('fast')
-			$('#g').fadeIn('slow')
+			$('#g').fadeIn('slow')	
 		} else {
 			Session.set('person-x', 'user')
 			$('#f').fadeOut('slow')
@@ -37,6 +38,7 @@ Template.nav.events({
 				// ERROR
 			}
 		});
+
 	},
 	'click #f' () {
 		console.log('facebook')
@@ -47,12 +49,14 @@ Template.nav.events({
 				// ERROR
 			}
 		});
+
 	},
 });
 
-Template.nav.rendered = ()=> {
-	Session.set('person-x', 'user')
-	$('.accounts').hide()
+Template.nav.rendered = () => {
+		Session.set('person-x', 'user');
+		$('.accounts').hide()
+		
 };
 
 function getFirstName(name) {
