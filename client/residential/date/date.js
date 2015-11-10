@@ -2,9 +2,8 @@ Template.date.events({
 	'click #rooms' () {
 		FlowRouter.go('/residential')
 	},
-	'click .fc-day' () {
-		let fc = $('#residential-calendar').fullCalendar('select')
-	}
+	'click td.fc-day-number' () {
+		}
 });
 
 Template.date.helpers({
@@ -24,13 +23,28 @@ Template.date.helpers({
 
 Template.date.rendered = () => {
 	let cal = $('#residential-calendar').fullCalendar('getDate')
-	Session.set('day-residential', moment(cal).format('dddd').toUpperCase())
-	Session.set('date-residential', moment(cal).format('MM / DD / YYYY'))
+	Tracker.autorun(() => {
+		Session.set('day-residential', moment(cal).format('dddd').toUpperCase())
+		Session.set('date-residential', moment(cal).format('MM / DD / YYYY'))	
+	})
+	
 
-	//console.log(moment(cal).format('dddd MM-DD-YYYY'))
+	$('#residential-calendar').fullCalendar({ 
+	    header: false, 
+	    aspectRatio: 1.5, 
+	    weekMode: 'liquid'
+	 });
+	$('td.fc-day').click( function () {
+	  	var strDate = $(this).data('date');
+	    Session.set('day-residential', moment(strDate).format('dddd').toUpperCase());
+	    Session.set('date-residential', moment(strDate).format('MM / DD / YYYY'))
+	    $('td.fc-day').removeClass('fc-pick');
+	    $(this).addClass('fc-pick');
+	});
 };
 
 	let date = new Date();
 	let d = date.getDate();
 	let m = date.getMonth();
 	let y = date.getFullYear();
+
