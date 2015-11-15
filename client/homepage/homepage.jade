@@ -7,7 +7,7 @@ template(name='homepage')
 				div.jumbotron
 					h3 Superb Cleaning Service
 					p
-						a(data-toggle='modal' data-target='#sign-in-with').btn.btn-material-light-blue-900.btn-lg learn more
+						a(href='/learnmore').btn.btn-material-light-blue-900.btn-lg#learn-more learn more
 			div.container
 				p or get a quick estimate		
 			div.container
@@ -18,28 +18,6 @@ template(name='homepage')
 				a(data-toggle='modal' data-ripple-color="#000" data-target='#enterprise-modal').cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-600#enterprise Enterprise
 
 			// Modals 
-
-			// Sign in With
-
-			div.container
-				div.modal.backdrop.fade#sign-in-with
-					div.modal-dialog
-						div.modal-content
-							div.modal-header
-								button(type='button' data-dismiss='modal' aria-hidden='true').close
-									i.fa.fa-times
-								h4.modal-title Sign in with
-							div.modal-body
-								div.container-fluid
-									button(data-dismiss='modal').accounts-btn.btn.btn-default#google
-										i.fa.fa-google.pull-left
-										span google
-								div.container-fluid
-									button(data-dismiss='modal').accounts-btn.btn.btn-default#facebook
-										i.fa.fa-facebook.pull-left
-										span facebook
-
-			// Estimate
 
 			// Residential
 

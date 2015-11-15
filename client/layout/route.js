@@ -16,6 +16,13 @@ FlowRouter.route('/profile', {
 	}
 });
 
+FlowRouter.route('/learnmore', {
+	name: "Learn",
+	action(params) {
+		renderThisTemplate('learn')
+	}
+});
+
 FlowRouter.route('/residential', {
 	name: "Residential",
 	action(params) {
