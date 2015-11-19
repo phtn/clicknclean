@@ -26,7 +26,7 @@ Template.residential.rendered = ()=> {
 
 Template.residential.events({
 	'click #back-to-main' () {
-		FlowRouter.go('/')
+		//FlowRouter.go('/')
 	},
 	'click #minus-bedroom' () {
 		console.log('minus test')
@@ -61,7 +61,7 @@ Template.residential.events({
 		check('#yard', Meteor.userId())
 	},
 	'click #date-residential' () {
-		FlowRouter.go('/date')
+		//FlowRouter.go('/date')
 	}
 });
 

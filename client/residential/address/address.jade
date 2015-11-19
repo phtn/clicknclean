@@ -1,0 +1,34 @@
+template(name='address')
+	div.container-fluid
+		ul.nav.nav-tabs.nav-justified.title-tab
+			li
+				a(href='/time').withoutripple
+					i.fa.fa-arrow-circle-left.fa-2x.pull-left#back-to-time
+			li
+				a.disabled.withoutripple
+					h4.title-category.text-center.title-category Residential
+			li
+				a(href='summary').withoutripple
+					i.fa.fa-arrow-circle-right.fa-2x.pull-right#summary
+	div.container-fluid.text-center
+		p Enter Complete Address
+
+	div.container-fluid.address-div.shadow-z-1.up-animate
+		div.form-group
+			label(for='address-one').control-label Address
+			input(type=text placeholder='14344 Grant Ave').form-control#address-one
+		div.form-group
+			label(for='inputSmall').control-label State
+			input(type=text placeholder='PA').form-control#state
+		div.form-group
+			label(for='inputSmall').control-label Zip Code
+			input(type=text placeholder='19116').form-control#zip
+		div.form-group
+			label(for='inputSmall').control-label Phone
+			input(type=number placeholder='2156781234').form-control#phone
+		div.form-group
+			label(for='inputSmall').control-label Email
+			input(type=email placeholder='rogerthat@gmail.com').form-control#email
+
+	div.container-fluid.text-center.save-btn-div
+		a.btn.btn-material-light-blue-400#save-address Save

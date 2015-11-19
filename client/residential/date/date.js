@@ -1,9 +1,9 @@
 Template.date.events({
 	'click #rooms' () {
-		FlowRouter.go('/residential')
+		//FlowRouter.go('/residential')
 	},
 	'click #time' () {
-		FlowRouter.go('/time')	
+		//FlowRouter.go('/time')	
 	}
 });
 

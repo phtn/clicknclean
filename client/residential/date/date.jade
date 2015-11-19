@@ -2,13 +2,13 @@ template(name='date')
 	div.container-fluid
 		ul.nav.nav-tabs.nav-justified.title-tab
 			li
-				a
+				a(href='/residential').withoutripple
 					i.fa.fa-arrow-circle-left.fa-2x.pull-left#rooms
 			li
 				a.disabled.withoutripple
 					h4.title-category.text-center.title-category Residential
 			li
-				a.withoutripple
+				a(href='/time').withoutripple
 					i.fa.fa-arrow-circle-right.fa-2x.pull-right#time
 	
 	div.container-fluid.text-center
@@ -23,5 +23,5 @@ template(name='date')
 				p#date-residential #{date}
 	br
 	
-	div.container-fluid.calendar.text-center
+	div.container-fluid.calendar.text-center.up-animate
 		+fullcalendar(id='#residential-calendar')

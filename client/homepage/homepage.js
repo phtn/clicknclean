@@ -82,14 +82,9 @@ Template.homepage.rendered = () => {
 		Session.set('duration-estimate', Math.round((Session.get('bedroom-count')*.5 + Session.get('bathroom-count')*.5 + Session.get('livingroom-count')*.5 ) + (Session.get('duration-estimate-b') || 0 ) ))
 
 	});
-	$('.accounts').fadeOut('fast')
+	
 	
 };
-
-Template.homepage.onRendered( ()=> {
-		$.material.init();
-	}
-);
 
 function minusEstimate (room) {
 	if (Session.get(room) != 0) {

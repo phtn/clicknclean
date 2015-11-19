@@ -6,7 +6,7 @@ Template.time.rendered = ()=> {
 
 Template.time.events({
 	'click #date' () {
-		FlowRouter.go('/date')
+		//FlowRouter.go('/date')
 	},
 	'click #zero-thirty' () {
 		$('#mins-lbl').text() === ('00') ? Session.set('minutes', '30') : Session.set('minutes', '00')
@@ -23,6 +23,9 @@ Template.time.events({
 			Session.set('hour', 13)
 		}
 		Session.set('hour', Session.get('hour') - 1)
+	},
+	'click #summary' () {
+		//FlowRouter.go('/address	')
 	}
 });
 

@@ -4,3 +4,7 @@ Meteor.publish('showUser', ()=> {
 Meteor.publish('showResidentialClients', ()=> {
 	return ResidentialClients.find()
 });
+
+Meteor.publish('showProfile', ()=> {
+	return Profile.find({})
+});

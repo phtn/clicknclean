@@ -44,3 +44,17 @@ FlowRouter.route('/time', {
 	}
 });
 
+FlowRouter.route('/summary', {
+	name: "Summary",
+	action(params) {
+		renderThisTemplate('summary')
+	}
+});
+
+FlowRouter.route('/address', {
+	name: "Address",
+	action(params) {
+		renderThisTemplate('address')
+	}
+});
+
