@@ -6,7 +6,100 @@ template(name='summary')
 					i.fa.fa-arrow-circle-left.fa-2x.pull-left#back-to-address
 			li
 				a.disabled.withoutripple
-					h4.title-category.text-center.title-category Residential
+					h4.title-category.text-center.title-category Summary
 			li
-				a.withoutripple
+				a(href='/checkout').withoutripple
 					i.fa.fa-arrow-circle-right.fa-2x.pull-right#checkout
+
+	div.container-fluid.summary-div.up-animate
+		each room
+			div.panel.panel-material-light-blue-400
+				div.panel-heading
+					h3.panel-title Services Ordered
+				div.panel-body
+					table.table.table-striped.table-hover
+						thead
+							tr
+								th QTY
+								th Price
+								th Room
+								th Total
+						tbody
+							tr
+								td.bds#bedroom-counter #{bedroom}
+								each price
+									td#bedroom-price #{bedroom}
+								td Bedroom
+								td
+									i.fa.fa-dollar &nbsp; #{getTotalBedroom}
+							tr
+								td #{bathroom}
+								each price
+									td #{bathroom}
+								td Bathroom
+								td
+									i.fa.fa-dollar &nbsp; #{getTotalBathroom}
+							tr
+								td #{livingroom}
+								each price
+									td #{livingroom}
+								td Livingroom
+								td
+									i.fa.fa-dollar &nbsp; #{getTotalLivingroom}
+							tr
+								td #{kitchen}
+								each price
+									td #{kitchen}
+								td Kitchen
+								td
+									i.fa.fa-dollar &nbsp; #{getTotalKitchen}
+							tr
+								td #{basement}
+								each price
+									td #{basement}
+								td Basement
+								td
+									i.fa.fa-dollar &nbsp; #{getTotalBasement}
+							tr
+								td #{garage}
+								each price
+									td #{garage}
+								td Garage
+								td
+									i.fa.fa-dollar &nbsp; #{getTotalGarage}
+							tr
+								td #{yard}
+								each price
+									td #{yard}
+								td Yard
+								td
+									i.fa.fa-dollar &nbsp; #{getTotalYard}
+							tr
+								td
+								td
+								td Sub Total
+								td 
+									i.fa.fa-dollar &nbsp; #{getSubTotal}
+							tr
+								td
+								td
+								td Tax ( 6% )
+								td
+									i.fa.fa-dollar &nbsp; #{getTax}
+							tr
+								td
+								td
+								td Total
+								td
+									i.fa.fa-dollar &nbsp; #{getTotal}
+
+	div.container-fluid.summary-div.up-animate
+		each location
+			div.panel.panel-material-light-blue-300
+				div.panel-heading
+					h3.panel-title Service Location
+				div.panel-body
+					p #{address}
+					p #{state} #{zip}
+	div.container-fluid.text-center#summary-btn-div
+		a.btn.btn-material-light-blue-400#to-checkout Proceed to checkout

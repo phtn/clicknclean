@@ -8,3 +8,7 @@ Meteor.publish('showResidentialClients', ()=> {
 Meteor.publish('showProfile', ()=> {
 	return Profile.find({})
 });
+
+Meteor.publish('showPrices', ()=> {
+	return Prices.find({})
+});

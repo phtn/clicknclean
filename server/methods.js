@@ -135,7 +135,35 @@ Meteor.methods({
 				}
 			}
 		)
+	},
+	setPrice (admin, bedroom, bathroom, livingroom, kitchen, basement, garage, yard) {
+		Prices.insert({
+			admin: admin,
+			bedroom: bedroom,
+			bathroom: bathroom,
+			livingroom: livingroom,
+			kitchen: kitchen,
+			basement: basement,
+			garage: garage,
+			yard: yard
+		})
+	},
+	updatePrice(bedroom, bathroom, livingroom, kitchen, basement, garage, yard) {
+		Prices.update({admin: 'phtn458'},
+			{$set: 
+				{
+				bedroom: bedroom,
+				bathroom: bathroom,
+				livingroom: livingroom,
+				kitchen: kitchen,
+				basement: basement,
+				garage: garage,
+				yard: yard
+				}
+			}
+		)
 	}
+	
 
 	
 

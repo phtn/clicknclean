@@ -58,3 +58,24 @@ FlowRouter.route('/address', {
 	}
 });
 
+FlowRouter.route('/admin', {
+	name: "Admin",
+	action(params) {
+		renderThisTemplate('admin')
+	}
+});
+
+FlowRouter.route('/checkout', {
+	name: "Checkout",
+	action(params) {
+		renderThisTemplate('checkout')
+	}
+});
+
+FlowRouter.route('/thanks', {
+	name: "Thanks",
+	action(params) {
+		renderThisTemplate('thanks')
+	}
+});
+

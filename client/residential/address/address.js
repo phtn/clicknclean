@@ -1,11 +1,22 @@
 Meteor.subscribe('showProfile')
+
 Template.address.events({
-	'click #back-to-time' () {
-		
+	'click #summary' () {
+		if ($('#address').val() === '' || $('#phone').val() === '') {
+			Bert.alert({
+				type: 'empty',
+				style: 'fixed-bottom',
+				message: 'All fields required.',
+				icon: 'fa-warning'
+			})
+		} else {
+			FlowRouter.go('/summary')
+		}
 	},
 	'click #save-address' () {
 		if (Profile.find({id: Meteor.userId()}).count() === 0) {
 			//console.log('no profile')
+
 			Meteor.call('insertProfileInfo',
 				Meteor.userId(),
 				$('#address-one').val(),
@@ -13,7 +24,13 @@ Template.address.events({
 				$('#zip').val(),
 				$('#phone').val(),
 				$('#email').val(),
-			)
+			);
+			Bert.alert({
+				type: 'saved',
+				style: 'fixed-bottom',
+				message: 'Save Successful',
+				icon: 'fa-check'
+			})
 		} else {
 			console.log('profile updated')
 			Meteor.call('updateProfileInfo',
@@ -23,7 +40,13 @@ Template.address.events({
 				$('#zip').val(),
 				$('#phone').val(),
 				$('#email').val(),
-			)
+			);
+			Bert.alert({
+				type: 'saved',
+				style: 'fixed-bottom',
+				message: 'Update Successful',
+				icon: 'fa-check'
+			})
 		}
 	}
 });

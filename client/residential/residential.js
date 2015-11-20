@@ -1,5 +1,5 @@
 Meteor.subscribe('showResidentialClients', Meteor.userId());
-
+Meteor.subscribe('showPrices')
 Template.residential.rendered = ()=> {
   $.material.init();
 	$.material.options = {
@@ -95,16 +95,17 @@ let clickRoom = (room) => {
 
 let priceSubtotal = () => {
 	if (Meteor.user()){
-		let doc = ResidentialClients.findOne({owner: Meteor.userId()});
+		let room = ResidentialClients.findOne({owner: Meteor.userId()});
+		let price = Prices.findOne({admin: 'phtn458'});
 		let subtotal =
 			(
-				(doc.bedroom * 20) +
-				(doc.bathroom * 25) +
-				(doc.livingroom * 25) +
-				(doc.kitchen * 45) +
-				(doc.basement * 50) +
-				(doc.garage * 60) +
-				(doc.yard * 50)
+				(room.bedroom * price.bedroom) +
+				(room.bathroom * price.bathroom) +
+				(room.livingroom * price.livingroom) +
+				(room.kitchen * price.kitchen) +
+				(room.basement * price.basement) +
+				(room.garage * price.garage) +
+				(room.yard * price.yard)
 			);
 		return subtotal;
 	}
