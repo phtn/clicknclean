@@ -27,7 +27,7 @@ Template.admin.events({
 });
 
 Template.admin.rendered = ()=> {
-	var doc = Prices.findOne({admin: 'phtn458'})
+	let doc = Prices.findOne({admin: 'phtn458'});
 	$('#bedroom-price-input').val(doc.bedroom)
 	$('#bathroom-price-input').val(doc.bathroom)
 	$('#livingroom-price-input').val(doc.livingroom)

@@ -47,7 +47,7 @@ Template.summary.helpers({
 	},
 	getTotal () {
 		let grandTotal = Session.get('getSubTotal') + Session.get('vat')
-		Session.set('grandTotal', grandTotal)
+		Session.setPersistent('grandTotal', grandTotal)
 		return grandTotal.toFixed(2)
 	},
 	location () {

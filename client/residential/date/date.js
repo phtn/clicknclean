@@ -25,8 +25,8 @@ Template.date.helpers({
 Template.date.rendered = () => {
 	let cal = $('#residential-calendar').fullCalendar('getDate')
 	Tracker.autorun(() => {
-		Session.set('day-residential', moment(cal).format('dddd').toUpperCase())
-		Session.set('date-residential', moment(cal).format('MM / DD'))	
+		Session.setPersistent('day-residential', moment(cal).format('dddd').toUpperCase())
+		Session.setPersistent('date-residential', moment(cal).format('MM / DD'))	
 	})
 	
 
@@ -37,9 +37,9 @@ Template.date.rendered = () => {
 	 });
 	$('td.fc-day').click( function () {
 	  	var strDate = $(this).data('date');
-	    Session.set('day-residential', moment(strDate).format('dddd').toUpperCase());
-	    Session.set('date-residential', moment(strDate).format('MM / DD'))
-	    Session.set('year-residential', moment(strDate).format('YYYY'))
+	    Session.setPersistent('day-residential', moment(strDate).format('dddd').toUpperCase());
+	    Session.setPersistent('date-residential', moment(strDate).format('MM / DD'))
+	    Session.setPersistent('year-residential', moment(strDate).format('YYYY'))
 	    $('td.fc-day').removeClass('fc-pick');
 	    $(this).addClass('fc-pick');
 	});
