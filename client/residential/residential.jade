@@ -11,83 +11,84 @@ template(name='residential')
 				a(href='/date')
 					i.fa.fa-arrow-circle-right.fa-2x.pull-right#date-residential
 		
-	div.container-fluid.text-center
-		p Tell us which area needs professional cleaning
-
-	each roomCount
-		div.container-fluid.alpha-page-div.up-animate
-			ul.nav.nav-tabs.nav-justified.sub-title.no-background
-				li
-					p PRICE
-				li
-					i.fa.fa-dollar#price-estimate &nbsp; #{priceSubtotalResidential}
-				li
-					p DURATION
-				li
-					p#duration-residential #{durationResidential} hrs
-			br
-			ul.nav.nav-tabs.nav-justified#darkest
-				li#minus-bedroom
-					a
-						i.fa.fa-minus
-				li
-					a.disabled.withoutripple #{bedroom} BEDROOM
-				li#plus-bedroom
-					a
-						i.fa.fa-plus
-			br
-			ul.nav.nav-tabs.nav-justified#darker
-				li#minus-bathroom
-					a
-						i.fa.fa-minus
-				li
-					a.disabled.withoutripple #{bathroom} BATHROOM
-				li#plus-bathroom
-					a
-						i.fa.fa-plus
-			br
-			ul.nav.nav-tabs.nav-justified#dark
-				li#minus-livingroom
-					a
-						i.fa.fa-minus
-				li
-					a.disabled.withoutripple #{livingroom} LIVINGROOM
-				li#plus-livingroom
-					a
-						i.fa.fa-plus
-			br
-			ul.nav.nav-tabs#medium
-				li.pull-left
-					p KITCHEN
-				li.pull-right
-					div.checkbox
-						label
-							input(type='checkbox')#kitchen
-			br
-			ul.nav.nav-tabs#med-light
-				li.pull-left
-					p BASEMENT
-				li.pull-right
-					div.checkbox
-						label
-							input(type='checkbox')#basement
-			br
-			ul.nav.nav-tabs#light
-				li.pull-left
-					p GARAGE
-				li.pull-right
-					div.checkbox
-						label
-							input(type='checkbox')#garage
-			br
-			ul.nav.nav-tabs#lighter
-				li.pull-left
-					p YARD / LAWN
-				li.pull-right
-					div.checkbox
-						label
-							input(type='checkbox')#yard
-			br
+	div.container-fluid.alpha-page-div.up-animate
+		div.panel.panel-material-light-blue-400
+				div.panel-heading
+					h3.panel-title Add Areas to Clean
+				div.panel-body
+					each roomCount
+						ul.nav.nav-tabs.nav-justified.sub-title.no-background
+							li
+								p PRICE
+							li
+								i.fa.fa-dollar#price-estimate &nbsp; #{priceSubtotalResidential}
+							li
+								p DURATION
+							li
+								p#duration-residential #{durationResidential} hrs
+						br
+						ul.nav.nav-tabs.nav-justified#darkest
+							li#minus-bedroom
+								a
+									i.fa.fa-minus
+							li
+								a.disabled.withoutripple #{bedroom} BEDROOM
+							li#plus-bedroom
+								a
+									i.fa.fa-plus
+						br
+						ul.nav.nav-tabs.nav-justified#darker
+							li#minus-bathroom
+								a
+									i.fa.fa-minus
+							li
+								a.disabled.withoutripple #{bathroom} BATHROOM
+							li#plus-bathroom
+								a
+									i.fa.fa-plus
+						br
+						ul.nav.nav-tabs.nav-justified#dark
+							li#minus-livingroom
+								a
+									i.fa.fa-minus
+							li
+								a.disabled.withoutripple #{livingroom} LIVINGROOM
+							li#plus-livingroom
+								a
+									i.fa.fa-plus
+						br
+						ul.nav.nav-tabs#medium
+							li.pull-left
+								p KITCHEN
+							li.pull-right
+								div.checkbox
+									label
+										input(type='checkbox')#kitchen
+						br
+						ul.nav.nav-tabs#med-light
+							li.pull-left
+								p BASEMENT
+							li.pull-right
+								div.checkbox
+									label
+										input(type='checkbox')#basement
+						br
+						ul.nav.nav-tabs#light
+							li.pull-left
+								p GARAGE
+							li.pull-right
+								div.checkbox
+									label
+										input(type='checkbox')#garage
+						br
+						ul.nav.nav-tabs#lighter
+							li.pull-left
+								p YARD / LAWN
+							li.pull-right
+								div.checkbox
+									label
+										input(type='checkbox')#yard
+						br
 
 
 

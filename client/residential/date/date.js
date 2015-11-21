@@ -39,6 +39,7 @@ Template.date.rendered = () => {
 	  	var strDate = $(this).data('date');
 	    Session.set('day-residential', moment(strDate).format('dddd').toUpperCase());
 	    Session.set('date-residential', moment(strDate).format('MM / DD'))
+	    Session.set('year-residential', moment(strDate).format('YYYY'))
 	    $('td.fc-day').removeClass('fc-pick');
 	    $(this).addClass('fc-pick');
 	});

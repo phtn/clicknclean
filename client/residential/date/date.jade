@@ -11,17 +11,20 @@ template(name='date')
 				a(href='/time').withoutripple
 					i.fa.fa-arrow-circle-right.fa-2x.pull-right#time
 	
-	div.container-fluid.text-center
-		p Select preferred date of cleaning
-	div.container-fluid.alpha-page-div
-		ul.nav.nav-tabs.nav-justified.sub-title.no-background.text-center
-			li
-				p DATE
-			li
-				p #{day}
-			li
-				p #{date}
-	br
 	
-	div.container-fluid.calendar.text-center.up-animate
-		+fullcalendar(id='#residential-calendar')
+	div.container-fluid.alpha-page-div.up-animate
+		div.panel.panel-material-light-blue-400
+				div.panel-heading
+					h3.panel-title Choose Preferred Date
+				div.panel-body
+					ul.nav.nav-tabs.nav-justified.sub-title.no-background.text-center
+						li
+							p DATE
+						li
+							p #{day}
+						li
+							p #{date}
+					br
+	
+					div.container-fluid.calendar.text-center.up-animate
+						+fullcalendar(id='#residential-calendar')

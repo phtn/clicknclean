@@ -10,25 +10,31 @@ template(name='address')
 			li
 				a.withoutripple
 					i.fa.fa-arrow-circle-right.fa-2x.pull-right#summary
-	div.container-fluid.text-center
-		p Enter Profile Information
+	
 
-	div.container-fluid.address-div.shadow-z-1.up-animate
-		div.form-group
-			label(for='address-one').control-label Address
-			input(type='text' placeholder='14344 Grant Ave').form-control#address-one
-		div.form-group
-			label(for='inputSmall').control-label State
-			input(type='text' placeholder='PA').form-control#state
-		div.form-group
-			label(for='inputSmall').control-label Zip Code
-			input(type='text' placeholder='19116').form-control#zip
-		div.form-group
-			label(for='inputSmall').control-label Phone
-			input(type='number' placeholder='2156781234').form-control#phone
-		div.form-group
-			label(for='inputSmall').control-label Email
-			input(type='email' placeholder='rogerthat@gmail.com').form-control#email
+	div.container-fluid.alpha-page-div.address-div.up-animate
+		div.panel.panel-material-light-blue-400.address-panel
+				div.panel-heading
+					h3.panel-title Add Profile Info
+				div.panel-body
+					div.form-group
+						label(for='address-one').control-label Address
+						input(type='text' placeholder='14344 Grant Ave').form-control#address-one
+					div.form-group
+						label(for='inputSmall').control-label City
+						input(type='text' placeholder='Philadelphia').form-control#city
+					div.form-group
+						label(for='inputSmall').control-label State
+						input(type='text' placeholder='PA').form-control#state
+					div.form-group
+						label(for='inputSmall').control-label Zip Code
+						input(type='text' placeholder='19116').form-control#zip
+					div.form-group
+						label(for='inputSmall').control-label Phone
+						input(type='number' placeholder='2156781234').form-control#phone
+					div.form-group
+						label(for='inputSmall').control-label Email
+						input(type='email' placeholder='rogerthat@gmail.com').form-control#email
 
-	div.container-fluid.text-center.save-btn-div
-		a.btn.btn-material-light-blue-400#save-address Save
+					div.container-fluid.text-center.save-btn-div
+						a.btn.btn-material-light-blue-400#save-address Save

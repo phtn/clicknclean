@@ -3,3 +3,9 @@ Template.checkout.events({
 		FlowRouter.go('/thanks')
 	} 
 });
+
+Template.checkout.helpers({
+	total () {
+		return Session.get('grandTotal')
+	} 
+});

@@ -94,12 +94,20 @@ template(name='summary')
 									i.fa.fa-dollar &nbsp; #{getTotal}
 
 	div.container-fluid.summary-div.up-animate
+		div.panel.panel-material-light-blue-300.location-panel
+				div.panel-heading
+					h3.panel-title Service Date & Time
+				div.panel-body
+					p #{day} &nbsp; #{date} &nbsp; #{year}
+					p #{time}
+
+	div.container-fluid.summary-div.up-animate
 		each location
-			div.panel.panel-material-light-blue-300
+			div.panel.panel-material-light-blue-300.location-panel
 				div.panel-heading
 					h3.panel-title Service Location
 				div.panel-body
 					p #{address}
-					p #{state} #{zip}
+					p #{city} #{state} #{zip}
 	div.container-fluid.text-center#summary-btn-div
 		a.btn.btn-material-light-blue-400#to-checkout Proceed to checkout

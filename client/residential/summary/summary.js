@@ -52,6 +52,19 @@ Template.summary.helpers({
 	},
 	location () {
 		return Profile.find({id: Meteor.userId()})
+	},
+	day () {
+		return Session.get('day-residential')
+	},
+	date () {
+		return Session.get('date-residential')
+	},
+	year () {
+		return Session.get('year-residential')
+	},
+	time () {
+		let time = Session.get('hour') + ' : ' + Session.get('minutes') + ' ' + Session.get('am-pm') 
+		return time
 	}
 
 });

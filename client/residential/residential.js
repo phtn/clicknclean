@@ -1,5 +1,6 @@
 Meteor.subscribe('showResidentialClients', Meteor.userId());
-Meteor.subscribe('showPrices')
+Meteor.subscribe('showPrices');
+
 Template.residential.rendered = ()=> {
   $.material.init();
 	$.material.options = {

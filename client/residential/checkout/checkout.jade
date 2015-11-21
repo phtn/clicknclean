@@ -15,6 +15,9 @@ template(name='checkout')
 				div.panel-heading
 					h3.panel-title Choose Payment Option
 				div.panel-body
+					div.container-fluid.text-center
+						span Total: &nbsp;
+							i.fa.fa-dollar &nbsp; #{total}
 					div.radio.radio-primary
 						label
 							input(type='radio' name='paymentOptions' value='Cash' checked='')#cash
@@ -27,5 +30,5 @@ template(name='checkout')
 						i.fa.fa-info-circle#note &nbsp; Note
 						p#note-p Cash and/or Check will be collected by Click n' Clean Team Supervisor upon arrival. A receipt will be issued right after the full amount due is received.
 
-		div.container-fluid.text-center
+		div.container-fluid.text-center.up-animate
 			a.btn.btn-material-light-blue-400#submit-payment SUBMIT

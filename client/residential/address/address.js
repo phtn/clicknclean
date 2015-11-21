@@ -20,6 +20,7 @@ Template.address.events({
 			Meteor.call('insertProfileInfo',
 				Meteor.userId(),
 				$('#address-one').val(),
+				$('#city').val(),
 				$('#state').val().toUpperCase(),
 				$('#zip').val(),
 				$('#phone').val(),
@@ -36,6 +37,7 @@ Template.address.events({
 			Meteor.call('updateProfileInfo',
 				Meteor.userId(),
 				$('#address-one').val(),
+				$('#city').val(),
 				$('#state').val().toUpperCase(),
 				$('#zip').val(),
 				$('#phone').val(),
@@ -56,6 +58,7 @@ Template.address.rendered = ()=> {
 	if (Profile.find({id: Meteor.userId()}).count() !== 0) {
 		console.log('has profile')
 		$('#address-one').val(doc.address)
+		$('#city').val(doc.city)
 		$('#state').val(doc.state)
 		$('#zip').val(doc.zip)
 		$('#phone').val(doc.phone)

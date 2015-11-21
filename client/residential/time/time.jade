@@ -13,25 +13,29 @@ template(name='time')
 	
 	div.container-fluid.text-center
 		p Select preferred TIME of cleaning
-	div.container-fluid.alpha-page-div
-		ul.nav.nav-tabs.nav-justified.sub-title.no-background.text-center
-			li
-				p TIME
-			li
-				p #{hour} : #{mins}
-			li
-				p #{ampm}
-	br
-	div.container-fluid.text-center.time-widget.up-animate
-		div.col-xs-4.col-sm-4.col-md-4.col-lg-4.text-center
-			a.btn.btn-default#plus-hour
-				i.fa.fa-angle-up.fa-2x
-			p.time-lbl#hour #{hour}
-			a.btn.btn-default#minus-hour
-				i.fa.fa-angle-down.fa-2x
-		div.col-xs-4.col-sm-4.col-md-4.col-lg-4.time-colon-lbl
-			p.time-lbl
-				strong :
-		div.col-xs-4.col-sm-4.col-md-4.col-lg-4.time-btn
-			a.btn.btn-flat#zero-thirty
-				p.time-lbl#mins-lbl #{mins}
+	div.container-fluid.alpha-page-div.up-animate
+		div.panel.panel-material-light-blue-400
+				div.panel-heading
+					h3.panel-title Choose Preferred Time
+				div.panel-body
+					ul.nav.nav-tabs.nav-justified.sub-title.no-background.text-center
+						li
+							p TIME
+						li
+							p #{hour} : #{mins}
+						li
+							p #{ampm}
+					br
+					div.container-fluid.text-center.time-widget.up-animate
+						div.col-xs-4.col-sm-4.col-md-4.col-lg-4.text-center
+							a.btn.btn-default#plus-hour
+								i.fa.fa-angle-up.fa-2x
+							p.time-lbl#hour #{hour}
+							a.btn.btn-default#minus-hour
+								i.fa.fa-angle-down.fa-2x
+						div.col-xs-4.col-sm-4.col-md-4.col-lg-4.time-colon-lbl
+							p.time-lbl
+								strong :
+						div.col-xs-4.col-sm-4.col-md-4.col-lg-4.time-btn
+							a.btn.btn-flat#zero-thirty
+								p.time-lbl#mins-lbl #{mins}
