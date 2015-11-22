@@ -1,30 +1,70 @@
 template(name='admin')
+
+
+
 	div.container-fluid
-		h3 Admin Tools
-		div.panel.panel-material-light-blue-400.set-price
-			div.panel-heading
-				h3.panel-title Set Price
-			div.panel-body
-				div.form-group
-					label.control-label Bedroom
-					input(type='number' placeholder='$ 20').form-control#bedroom-price-input
-				div.form-group
-					label.control-label Bathroom
-					input(type='number' placeholder='$ 20').form-control#bathroom-price-input
-				div.form-group
-					label.control-label Livingroom
-					input(type='number' placeholder='$ 20').form-control#livingroom-price-input
-				div.form-group
-					label.control-label Kitchen
-					input(type='number' placeholder='$ 20').form-control#kitchen-price-input
-				div.form-group
-					label.control-label Basement
-					input(type='number' placeholder='$ 20').form-control#basement-price-input
-				div.form-group
-					label.control-label Garage
-					input(type='number' placeholder='$ 20').form-control#garage-price-input
-				div.form-group
-					label.control-label Yard
-					input(type='number' placeholder='$ 20').form-control#yard-price-input
-				div.container-fluid.text-center
-					a.btn.btn-material-light-blue-400#save-price save
+		h6 Admin Tools
+	div.container-fluid.text-center
+			ul.nav.nav-tabs.nav-justified.sub-title.grey-background.text-center
+				li
+					a(href='#prices' data-toggle='tab')#services-li PRICES
+				li
+					a(href='#new' data-toggle='tab') NEW ORDERS
+				li
+					a(href='#working' data-toggle='tab') WORKING ORDERS
+				li
+					a(href='#completed' data-toggle='tab') COMPLETED ORDERS
+	div.tab-content
+		div.tab-pane.fade#prices
+			div.container-fluid
+				div.panel.panel-material-light-blue-400.set-price
+					div.panel-heading
+						h3.panel-title Set Price
+					div.panel-body
+						div.form-group
+							label.control-label Bedroom
+							input(type='number' placeholder='$ 20').form-control#bedroom-price-input
+						div.form-group
+							label.control-label Bathroom
+							input(type='number' placeholder='$ 20').form-control#bathroom-price-input
+						div.form-group
+							label.control-label Livingroom
+							input(type='number' placeholder='$ 20').form-control#livingroom-price-input
+						div.form-group
+							label.control-label Kitchen
+							input(type='number' placeholder='$ 20').form-control#kitchen-price-input
+						div.form-group
+							label.control-label Basement
+							input(type='number' placeholder='$ 20').form-control#basement-price-input
+						div.form-group
+							label.control-label Garage
+							input(type='number' placeholder='$ 20').form-control#garage-price-input
+						div.form-group
+							label.control-label Yard
+							input(type='number' placeholder='$ 20').form-control#yard-price-input
+						div.container-fluid.text-center
+							a.btn.btn-material-light-blue-400#save-price save
+		
+		div.tab-pane.fade#new
+			div.container-fluid
+				div.panel.panel-material-light-blue-400.set-price
+					div.panel-heading
+						h3.panel-title New Orders : &nbsp; #{orderCount}
+					div.panel-body
+						div.list-group
+							each order
+								div.list-group-item.shadow-z-1
+									div.row-action-primary
+										i.fa.fa-check
+									div.row-content
+										div.least-content #{month} / #{date} &nbsp; #{time}
+										span.list-group-item-heading
+											i.mdi-action-perm-identity
+												span #{name}
+											i.mdi-communication-call 
+												span #{phone}
+											i.mdi-action-room 
+												span #{address} &nbsp; #{city} &nbsp; #{state} &nbsp; #{zip}
+										p #{total} | #{paymentType}
+
+

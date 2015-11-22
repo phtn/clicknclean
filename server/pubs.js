@@ -12,3 +12,7 @@ Meteor.publish('showProfile', ()=> {
 Meteor.publish('showPrices', ()=> {
 	return Prices.find({})
 });
+
+Meteor.publish('showOrders', ()=> {
+	return Orders.find({});
+});

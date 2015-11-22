@@ -26,13 +26,25 @@ Template.admin.events({
 	}
 });
 
+Template.admin.helpers({
+	orderCount () {
+		return Orders.find({}).count()
+	},
+	order () {
+		return Orders.find({})
+	} 
+});
+
 Template.admin.rendered = ()=> {
-	let doc = Prices.findOne({admin: 'phtn458'});
-	$('#bedroom-price-input').val(doc.bedroom)
-	$('#bathroom-price-input').val(doc.bathroom)
-	$('#livingroom-price-input').val(doc.livingroom)
-	$('#kitchen-price-input').val(doc.kitchen)
-	$('#basement-price-input').val(doc.basement)
-	$('#garage-price-input').val(doc.garage)
-	$('#yard-price-input').val(doc.yard)
+	Meteor.subscribe('showPrices')
+	let price = Prices.findOne({admin: 'phtn458'})
+	if (Prices.find({admin: 'phtn458'}).count() !== 0) {
+		$('#bedroom-price-input').val(price.bedroom)
+		$('#bathroom-price-input').val(price.bathroom)
+		$('#livingroom-price-input').val(price.livingroom)
+		$('#kitchen-price-input').val(price.kitchen)
+		$('#basement-price-input').val(price.basement)
+		$('#garage-price-input').val(price.garage)
+		$('#yard-price-input').val(price.yard)
+	}
 }

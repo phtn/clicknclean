@@ -164,6 +164,35 @@ Meteor.methods({
 				}
 			}
 		)
+	},
+	submitOrder (id, name, email, phone, address, city, state, zip, time, date, month, year, duration, bedroom, bathroom, livingroom, kitchen, basement, garage, yard, total, paymentType) {
+		Orders.insert({
+			owner: id,
+			name: name,
+			email: email,
+			phone: phone,
+			address: address,
+			city: city,
+			state: state,
+			zip: zip,
+			time: time,
+			date: date,
+			month: month,
+			year: year,
+			duration: duration,
+			service: {
+				bedroom: bedroom,
+				bathroom: bathroom,
+				livingroom: livingroom,
+				kitchen: kitchen,
+				basement: basement,
+				garage: garage,
+				yard: yard
+			},
+			total: total,
+			paymentType: paymentType,
+			createdAt: new Date()
+		})
 	}
 	
 

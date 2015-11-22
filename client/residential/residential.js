@@ -20,8 +20,8 @@ Template.residential.rendered = ()=> {
 	}
 
 	Tracker.autorun(() => {
-		Session.set('subtotal-residential', priceSubtotal())
-		Session.set('duration-residential', duration())
+		Session.setPersistent('subtotal-residential', priceSubtotal())
+		Session.setPersistent('duration-residential', duration())
 	});
 };
 

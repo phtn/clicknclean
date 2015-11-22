@@ -96,10 +96,11 @@ template(name='summary')
 	div.container-fluid.summary-div.up-animate
 		div.panel.panel-material-light-blue-300.location-panel
 				div.panel-heading
-					h3.panel-title Service Date & Time
+					h3.panel-title Service Date, Time & Duration
 				div.panel-body
-					p #{day} &nbsp; #{date} &nbsp; #{year}
+					p #{day} &nbsp; #{month} / #{date} &nbsp; #{year}
 					p #{time}
+					p #{duration} &nbsp; hrs
 
 	div.container-fluid.summary-div.up-animate
 		each location

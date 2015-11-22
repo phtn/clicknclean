@@ -56,6 +56,9 @@ Template.summary.helpers({
 	day () {
 		return Session.get('day-residential')
 	},
+	month () {
+		return Session.get('month-residential')
+	},
 	date () {
 		return Session.get('date-residential')
 	},
@@ -63,8 +66,12 @@ Template.summary.helpers({
 		return Session.get('year-residential')
 	},
 	time () {
-		let time = Session.get('hour') + ' : ' + Session.get('minutes') + ' ' + Session.get('am-pm') 
+		let time = Session.get('hour') + ' : ' + Session.get('minutes') + ' ' + Session.get('am-pm');
+		Session.setPersistent('time', time);
 		return time
+	}, 
+	duration () {
+		return Session.get('duration-residential')
 	}
 
 });

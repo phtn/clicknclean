@@ -38,7 +38,8 @@ Template.date.rendered = () => {
 	$('td.fc-day').click( function () {
 	  	var strDate = $(this).data('date');
 	    Session.setPersistent('day-residential', moment(strDate).format('dddd').toUpperCase());
-	    Session.setPersistent('date-residential', moment(strDate).format('MM / DD'))
+	    Session.setPersistent('month-residential', moment(strDate).format('MM'))
+	    Session.setPersistent('date-residential', moment(strDate).format('DD'))
 	    Session.setPersistent('year-residential', moment(strDate).format('YYYY'))
 	    $('td.fc-day').removeClass('fc-pick');
 	    $(this).addClass('fc-pick');
