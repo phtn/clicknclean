@@ -25,9 +25,10 @@ Template.checkout.events({
 			service.garage,
 			service.yard,
 			Session.get('grandTotal'),
-			Session.get('payment-type')
+			Session.get('payment-type'),
+			'new'
 		);
-		//FlowRouter.go('/thanks')
+		FlowRouter.go('/thanks')
 	},
 	'click #cash' () {
 		Session.setPersistent('payment-type', 'cash')

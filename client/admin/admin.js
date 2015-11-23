@@ -23,16 +23,46 @@ Template.admin.events({
 			$('#yard-price-input').val()
 			)
 		}
+	},
+	'click #add-to-working' () {
+		Meteor.call('changeOrderStatus', this._id, 'working')
+		Bert.alert({
+			type: 'added-to-working',
+			style: 'fixed-bottom',
+			message: 'Added to Working List!',
+			icon: 'fa-check'
+		})
+	},
+	'click #add-to-completed' () {
+		Meteor.call('changeOrderStatus', this._id, 'completed')
+		Bert.alert({
+			type: 'added-to-completed',
+			style: 'fixed-bottom',
+			message: 'Added to Completed List!',
+			icon: 'fa-check'
+		})
 	}
 });
 
 Template.admin.helpers({
-	orderCount () {
-		return Orders.find({}).count()
+	newOrdersCount () {
+		return Orders.find({status: 'new'}).count()
 	},
-	order () {
-		return Orders.find({})
-	} 
+	newOrders () {
+		return Orders.find({status: 'new'})
+	},
+	workingOrdersCount () {
+		return Orders.find({status: 'working'}).count()
+	},
+	workingOrders () {
+		return Orders.find({status: 'working'})
+	},
+	completedOrdersCount () {
+		return Orders.find({status: 'completed'}).count()
+	},
+	completedOrders () {
+		return Orders.find({status: 'completed'})
+	}
 });
 
 Template.admin.rendered = ()=> {

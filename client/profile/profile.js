@@ -6,3 +6,9 @@ Template.profile.events({
 		
 	} 
 });
+
+Template.profile.helpers({
+	ownerOrders () {
+		return Orders.find({owner: Meteor.userId()})
+	} 
+});

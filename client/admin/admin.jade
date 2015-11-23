@@ -49,12 +49,62 @@ template(name='admin')
 			div.container-fluid
 				div.panel.panel-material-light-blue-400.set-price
 					div.panel-heading
-						h3.panel-title New Orders : &nbsp; #{orderCount}
+						h3.panel-title New Orders : &nbsp; #{newOrdersCount}
 					div.panel-body
 						div.list-group
-							each order
+							each newOrders
 								div.list-group-item
 									a.btn.btn-fab.mdi-action-done.btn-material-light-blue-400#add-to-working
+									div.row-content
+										div.least-content #{month} / #{date} &nbsp; #{time}
+										span.list-group-item-heading
+											i.mdi-action-perm-identity
+												span #{name}
+											i.mdi-communication-call 
+												span #{phone}
+											i.mdi-action-room
+												span #{address} &nbsp; #{city} &nbsp; #{state} &nbsp; #{zip}
+										p Total: $ &nbsp;
+											span #{total}
+										p.float Payment Type: &nbsp;
+											span #{paymentType}
+								hr
+
+		div.tab-pane.fade#working
+			div.container-fluid
+				div.panel.panel-material-light-blue-400.set-price
+					div.panel-heading
+						h3.panel-title Working Orders : &nbsp; #{workingOrdersCount}
+					div.panel-body
+						div.list-group
+							each workingOrders
+								div.list-group-item
+									a.btn.btn-fab.mdi-action-done.btn-material-deep-orange-A700#add-to-completed
+									div.row-content
+										div.least-content #{month} / #{date} &nbsp; #{time}
+										span.list-group-item-heading
+											i.mdi-action-perm-identity
+												span #{name}
+											i.mdi-communication-call 
+												span #{phone}
+											i.mdi-action-room
+												span #{address} &nbsp; #{city} &nbsp; #{state} &nbsp; #{zip}
+										p Total: $ &nbsp;
+											span #{total}
+										p.float Payment Type: &nbsp;
+											span #{paymentType}
+								hr
+
+		div.tab-pane.fade#completed
+			div.container-fluid
+				div.panel.panel-material-light-blue-400.set-price
+					div.panel-heading
+						h3.panel-title Completed Orders : &nbsp; #{completedOrdersCount}
+					div.panel-body
+						div.list-group
+							each completedOrders
+								div.list-group-item
+									a.btn.btn-fab.mdi-action-done-all.btn-material-green-A700#remove-completed
 									div.row-content
 										div.least-content #{month} / #{date} &nbsp; #{time}
 										span.list-group-item-heading

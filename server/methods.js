@@ -165,7 +165,7 @@ Meteor.methods({
 			}
 		)
 	},
-	submitOrder (id, name, email, phone, address, city, state, zip, time, date, month, year, duration, bedroom, bathroom, livingroom, kitchen, basement, garage, yard, total, paymentType) {
+	submitOrder (id, name, email, phone, address, city, state, zip, time, date, month, year, duration, bedroom, bathroom, livingroom, kitchen, basement, garage, yard, total, paymentType, status) {
 		Orders.insert({
 			owner: id,
 			name: name,
@@ -191,8 +191,16 @@ Meteor.methods({
 			},
 			total: total,
 			paymentType: paymentType,
+			status: status,
 			createdAt: new Date()
 		})
+	},
+	changeOrderStatus (id, status) {
+		Orders.update({_id: id},
+			{$set: {
+				status: status
+			}}
+		)
 	}
 	
 

@@ -5,4 +5,43 @@ template(name='profile')
 				a.disabled.withoutripple
 					h4.title-category.text-center.title-category User Profile
 	div.container-fluid.text-center
-		a.btn.btn-primary#logout log out
+			ul.nav.nav-tabs.nav-justified.sub-title.grey-background.text-center
+				li
+					a(href='#profile-pane' data-toggle='tab')#profile-tab PROFILE SETTINGS
+				li
+					a(href='#orders-pane' data-toggle='tab')#orders-tab VIEW ORDERS
+
+	div.tab-content
+		div.tab-pane.fade#profile-pane
+			div.container-fluid
+				div.panel.panel-material-light-blue-400.set-price
+					div.panel-heading
+						h3.panel-title Profile Settings
+					div.panel-body
+						div.container-fluid.text-center
+						a.btn.btn-primary#logout log out
+		div.tab-pane.fade#orders-pane
+			div.container-fluid
+				div.panel.panel-material-light-blue-400.set-price
+					div.panel-heading
+						h3.panel-title Your Orders
+					div.panel-body
+						div.list-group
+							each ownerOrders
+								div.list-group-item
+									div.row-content
+										div.least-content #{month} / #{date} &nbsp; #{time}
+										span.list-group-item-heading
+											i.mdi-action-perm-identity
+												span #{name}
+											i.mdi-communication-call 
+												span #{phone}
+											i.mdi-action-room
+												span #{address} &nbsp; #{city} &nbsp; #{state} &nbsp; #{zip}
+										p Total: $ &nbsp;
+											span #{total}
+										p.float Payment Type: &nbsp;
+											span #{paymentType}
+								hr
+
+	

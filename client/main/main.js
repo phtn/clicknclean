@@ -14,7 +14,7 @@ Meteor.subscribe('showUsers');
 Meteor.subscribe('showResidentialClients');
 
 function addCLient () {
-	if (ResidentialClients.find({owner: Meteor.userId()}).count() === 0) {
+	if (!ResidentialClients.findOne({owner: Meteor.userId()})) {
 		Meteor.call('insertNewResidentialClient', Meteor.userId())
 	} else {
 		console.log('client exists')
