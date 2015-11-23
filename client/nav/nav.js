@@ -10,6 +10,7 @@ Template.nav.helpers({
 
 Template.nav.events({
 	'click #name' () {
+		Session.setPersistent('whichProfileTab', '#profile-tab')
 		FlowRouter.go('/profile')
 	},
 	'click .brand' () {
