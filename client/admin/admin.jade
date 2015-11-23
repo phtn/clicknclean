@@ -7,7 +7,7 @@ template(name='admin')
 	div.container-fluid.text-center
 			ul.nav.nav-tabs.nav-justified.sub-title.grey-background.text-center
 				li
-					a(href='#prices' data-toggle='tab')#services-li PRICES
+					a(href='#prices' data-toggle='tab')#prices-li PRICES
 				li
 					a(href='#new' data-toggle='tab') NEW ORDERS
 				li
@@ -53,9 +53,8 @@ template(name='admin')
 					div.panel-body
 						div.list-group
 							each order
-								div.list-group-item.shadow-z-1
-									div.row-action-primary
-										i.fa.fa-check
+								div.list-group-item
+									a.btn.btn-fab.mdi-action-done.btn-material-light-blue-400#add-to-working
 									div.row-content
 										div.least-content #{month} / #{date} &nbsp; #{time}
 										span.list-group-item-heading
@@ -63,8 +62,11 @@ template(name='admin')
 												span #{name}
 											i.mdi-communication-call 
 												span #{phone}
-											i.mdi-action-room 
+											i.mdi-action-room
 												span #{address} &nbsp; #{city} &nbsp; #{state} &nbsp; #{zip}
-										p #{total} | #{paymentType}
-
+										p Total: $ &nbsp;
+											span #{total}
+										p.float Payment Type: &nbsp;
+											span #{paymentType}
+								hr
 

@@ -47,4 +47,5 @@ Template.admin.rendered = ()=> {
 		$('#garage-price-input').val(price.garage)
 		$('#yard-price-input').val(price.yard)
 	}
+	$('#prices-li').click()
 }
