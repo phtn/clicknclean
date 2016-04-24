@@ -1,108 +1,139 @@
 template(name='homepage')
 	if currentUser
 		+main
-	else	
-		div.container-fluid.homepage-div.text-center
-			div.container
-				div.jumbotron
-					h3 Superb Cleaning Service
-					p
-						a(href='/learnmore').btn.btn-material-light-blue-900.btn-lg#learn-more learn more
-			div.container
-				p or get a quick estimate		
-			div.container
-				a(data-toggle='modal' data-ripple-color="#000" data-target='#residential-modal').cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-800#residential       Residential
-			div.container
-				a(data-toggle='modal' data-ripple-color="#000" data-target='#office-modal').cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-700#office office / commercial
-			div.container
-				a(data-toggle='modal' data-ripple-color="#000" data-target='#enterprise-modal').cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-600#enterprise Enterprise
+	else
+		div.main
+			div.container.mobile
+				div.row
+					div(data-toggle="modal" data-target="#resModal-unpublish").col.s12.m12.l6
+						div.card
+							div.card-image
+								img(src="/assets/img/berber.jpg")
+								span.card-title.flow-text Residential
+							div.card-content
+							div.card-action.text-center
+								p.pr.flow-text 300 sq ft - $99
 
-			// Modals 
+					div.col.s12.m12.l6
+						div.card
+							div.card-image
+								img(src="/assets/img/office.jpg")
+								span.card-title.flow-text Offices
+							div.card-content
+							div.card-action.text-center
+								p.pr.flow-text 300 sq ft - $119
 
-			// Residential
+			div.container.mobile
+				div.row
+					div.col.s12.m12.l6
+						div.card
+							div.card-image
+								img(src="/assets/img/hotel.jpg")
+								span.card-title.flow-text Hotels
+							div.card-content
+							div.card-action.text-center
+								p.pr.flow-text 300 sq ft - $119
 
-			div.container
-				div.modal.backdrop.fade#residential-modal
-					div.modal-dialog
-						div.modal-content
-							div.modal-header
-								button(type='button' data-dismiss='modal' aria-hidden='true').close
-									i.fa.fa-times
-								h4.modal-title Residential Estimate
-							div.modal-body
-								ul.nav.nav-tabs#white
-									li.pull-left
-										p COST ESTIMATE
-									li.pull-right
-										i.fa.fa-dollar#price-estimate &nbsp; #{priceEstimate}
-								br
-								ul.nav.nav-tabs#white
-									li.pull-left
-										p DURATION
-									li.pull-right
-										i.fa.fa-clock-o#duration-estimate &nbsp; #{durationEstimate} hrs
-								br
-								ul.nav.nav-tabs.nav-justified#darkest
-									li#minus-bedroom-estimate
-										a
-											i.fa.fa-minus
-									li
-										a.disabled.withoutripple #{bedroomCount} BEDROOM
-									li#plus-bedroom-estimate
-										a
-											i.fa.fa-plus
-								br
-								ul.nav.nav-tabs.nav-justified#darker
-									li#minus-bathroom-estimate
-										a
-											i.fa.fa-minus
-									li
-										a.disabled.withoutripple #{bathroomCount} BATHROOM
-									li#plus-bathroom-estimate
-										a
-											i.fa.fa-plus
-								br
-								ul.nav.nav-tabs.nav-justified#dark
-									li#minus-livingroom-estimate
-										a
-											i.fa.fa-minus
-									li
-										a.disabled.withoutripple #{livingroomCount} LIVINGROOM
-									li#plus-livingroom-estimate
-										a
-											i.fa.fa-plus
-								br
-								ul.nav.nav-tabs#white
-									li.pull-left
-										p KITCHEN
-									li.pull-right
-										div.checkbox.withoutripple
-											label
-												input(type='checkbox').withoutripple#kitchen-estimate
-								br
-								ul.nav.nav-tabs#white
-									li.pull-left
-										p BASEMENT
-									li.pull-right
-										div.checkbox
-											label
-												input(type='checkbox').withoutripples#basement-estimate
-								br
-								ul.nav.nav-tabs#white
-									li.pull-left
-										p GARAGE
-									li.pull-right
-										div.checkbox
-											label
-												input(type='checkbox').withoutripples#garage-estimate
-								br
-								ul.nav.nav-tabs#white
-									li.pull-left
-										p YARD
-									li.pull-right
-										div.checkbox
-											label
-												input(type='checkbox').withoutripples#yard-estimate
+					div.col.s12.m12.l6
+						div.card
+							div.card-image
+								img(src="/assets/img/restaurant.jpg")
+								span.card-title.flow-text Restaurants
+							div.card-content
+							div.card-action.text-center
+								p.pr.flow-text 300 sq ft - $119
+
+
+		footer.page-footer.text-center
+			div.footer-copyright
+				div.col-xs-6
+					p &copy; 2016 Click-n-Clean
+				div.col.xs-6
+					span.fa.fa-phone &nbsp;
+					a(href="tel:2247157926").footer-phone 224-715-7926
+
+
+			div.modal#resModal
+				div.modal-content
+					div.modal-header
+						button(type='button' data-dismiss='modal' aria-hidden='true').close
+							i.fa.fa-times
+						h4.modal-title.flow-text Residential
+						ul.nav.nav-tabs#white
+							li.pull-left
+								p.flow-text TOTAL
+							li.pull-right
+								i.fa.fa-dollar.flow-text#price-estimate &nbsp; #{priceEstimate}
+						br
+						ul.nav.nav-tabs#white
+							li.pull-left
+								p.flow-text DURATION
+							li.pull-right
+								i.fa.fa-clock-o.flow-text#duration-estimate &nbsp; #{durationEstimate} hrs
+						br
+						ul.nav.nav-tabs.nav-justified#darkest
+							li#minus-bedroom-estimate
+								a
+									i.fa.fa-minus
+							li
+								a.disabled.withoutripple.flow-text #{bedroomCount} BEDROOM
+							li#plus-bedroom-estimate
+								a
+									i.fa.fa-plus
+						br
+						ul.nav.nav-tabs.nav-justified#darker
+							li#minus-bathroom-estimate
+								a
+									i.fa.fa-minus
+							li
+								a.disabled.withoutripple #{bathroomCount} BATHROOM
+							li#plus-bathroom-estimate
+								a
+									i.fa.fa-plus
+						br
+						ul.nav.nav-tabs.nav-justified#dark
+							li#minus-livingroom-estimate
+								a
+									i.fa.fa-minus
+							li
+								a.disabled.withoutripple #{livingroomCount} LIVINGROOM
+							li#plus-livingroom-estimate
+								a
+									i.fa.fa-plus
+						br
+						ul.nav.nav-tabs#white
+							li.pull-left
+								p KITCHEN
+							li.pull-right
+								div.checkbox.withoutripple
+									label
+										input(type='checkbox').withoutripple#kitchen-estimate
+						br
+						ul.nav.nav-tabs#white
+							li.pull-left
+								p BASEMENT
+							li.pull-right
+								div.checkbox
+									label
+										input(type='checkbox').withoutripples#basement-estimate
+						br
+						ul.nav.nav-tabs#white
+							li.pull-left
+								p GARAGE
+							li.pull-right
+								div.checkbox
+									label
+										input(type='checkbox').withoutripples#garage-estimate
+						br
+						ul.nav.nav-tabs#white
+							li.pull-left
+								p YARD
+							li.pull-right
+								div.checkbox
+									label
+										input(type='checkbox').withoutripples#yard-estimate
+
+			
 
 			div.container
 				div.modal.backdrop.fade#office-modal
@@ -113,7 +144,8 @@ template(name='homepage')
 									i.fa.fa-times
 								h4.modal-title Office / Commercial Estimate
 							div.modal-body
-								h3.text-center in progress ...
+								h3.text-center call us 
+									a(href="tel:2246227696") 224 622 7696
 
 			div.container
 				div.modal.backdrop.fade#enterprise-modal

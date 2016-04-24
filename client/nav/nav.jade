@@ -1,17 +1,17 @@
 template(name='nav')
-	nav.navbar.navbar-material-light-blue-300
+	nav.navbar.navbar-fixed-top.navbar-material-light-blue-200
 		div.container-fluid.nav-div
 			div.navbar-header.header
-				div.col-xs-6
-
+				div.col-xs-12.text-center
+					//- div.col-xs-1
+					//- 	img(src='/assets/img/icon3.png')#icon 
+					//- div.col-xs-4
 					h4
-						img(src='/assets/img/icon3.png')#icon
 						span.brand click n' clean
-				div.col-xs-6
+				//div.col-xs-5
 					if currentUser
 						span.badge.pull-right#name #{user}
 					else
-						//i(data-toggle='modal' data-target='#sign-in-with').fa.fa-user.nav-user.pull-right
 						i(class='fa-#{person}').fa.nav-user.pull-right#person-x
 						span.fa-stack.pull-right.accounts#f
 							i.fa.fa-circle.fa-stack-2x#facebook-background

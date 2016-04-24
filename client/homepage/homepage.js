@@ -46,6 +46,9 @@ Template.homepage.events({
 	'click #yard-estimate' () {
 		check ('#yard-estimate')
 		addPriceEstimate ('#yard-estimate', 50)
+	},
+	'click #resModal' () {
+		//$('#resModal').openModal();
 	}
 });
 
@@ -78,11 +81,12 @@ Template.homepage.rendered = () => {
 	Session.set('bathroom-count', 1 )
 	Session.set('livingroom-count', 1 )
 	Tracker.autorun(() => {
-		Session.set('price-estimate', (Session.get('other-room-estimate') || 0) + (Session.get('bedroom-count')*20 + Session.get('bathroom-count')*25 + Session.get('livingroom-count')*25 ))
+		Session.set('price-estimate', (Session.get('other-room-estimate') || 0) + (Session.get('bedroom-count')*99 + Session.get('bathroom-count')*99 + Session.get('livingroom-count')*99 ))
 		Session.set('duration-estimate', Math.round((Session.get('bedroom-count')*.5 + Session.get('bathroom-count')*.5 + Session.get('livingroom-count')*.5 ) + (Session.get('duration-estimate-b') || 0 ) ))
 
 	});
 	
+	$('.parallax').parallax();	
 	
 };
 
@@ -99,7 +103,7 @@ function plusEstimate (room) {
 }
 
 function totalEstimate (roomA, roomB, roomC) {
-	return Session.set('price-estimate', ((20 * roomA) + (25 * roomB) + (25 * roomC)) )
+	return Session.set('price-estimate', ((99 * roomA) + (99 * roomB) + (99 * roomC)) )
 }
 
 function check (room) {
@@ -121,3 +125,8 @@ function addPriceEstimate (room, price) {
 		Session.set('other-room-estimate', Session.get('other-room-estimate') - price)
 	}
 }
+
+$(document).ready(function(){
+    // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+    
+  });

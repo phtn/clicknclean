@@ -1,0 +1,19 @@
+div.container
+				//div.jumbotron
+					h3 Superb Cleaning Service
+					p
+						a(href='/learnmore').btn.btn-material-light-blue-900.btn-lg#learn-more learn more
+			div.container
+				p.lb-estimate 
+					strong Get a Quick Estimate
+			div.container
+				a(data-toggle='modal' data-ripple-color="#000" data-target='#residential-modal').cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-800#residential       Residential
+			div.container
+				a(data-toggle='modal' data-ripple-color="#000" data-target='#office-modal').cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-700#office office / commercial
+			div.container
+				a(data-toggle='modal' data-ripple-color="#000" data-target='#enterprise-modal').cat-btn.btn.btn-primary.btn-raised.btn-material-light-blue-600#enterprise Enterprise
+			
+				
+
+			div.container.services-div
+				p CARPETS &middot; TILE & GROUT &middot; HARDWOOD
