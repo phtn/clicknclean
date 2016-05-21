@@ -1,6 +1,6 @@
-Template.homepage.onCreated(()=> {
+/*Template.homepage.onCreated(()=> {
 	Blaze._allowJavascriptUrls();
-});
+});*/
 
 Template.homepage.events({
 	
@@ -47,8 +47,8 @@ Template.homepage.events({
 		check ('#yard-estimate')
 		addPriceEstimate ('#yard-estimate', 50)
 	},
-	'click #resModal' () {
-		//$('#resModal').openModal();
+	'click #res' () {
+		FlowRouter.go('/residential-16');
 	}
 });
 
@@ -78,8 +78,8 @@ Template.homepage.rendered = () => {
 		"withRipples": 'a, a:not(.withoutripple), input:not(.withoutripple)' 
 	};
 	Session.set('bedroom-count', 1 )
-	Session.set('bathroom-count', 1 )
-	Session.set('livingroom-count', 1 )
+	Session.set('bathroom-count', 0 )
+	Session.set('livingroom-count', 0 )
 	Tracker.autorun(() => {
 		Session.set('price-estimate', (Session.get('other-room-estimate') || 0) + (Session.get('bedroom-count')*99 + Session.get('bathroom-count')*99 + Session.get('livingroom-count')*99 ))
 		Session.set('duration-estimate', Math.round((Session.get('bedroom-count')*.5 + Session.get('bathroom-count')*.5 + Session.get('livingroom-count')*.5 ) + (Session.get('duration-estimate-b') || 0 ) ))
@@ -109,11 +109,11 @@ function totalEstimate (roomA, roomB, roomC) {
 function check (room) {
 	if ($(room).hasClass('checked')) {
 		$(room).removeClass('checked')
-		console.log('not checked')
+		//console.log('not checked')
 		Session.set('duration-estimate-b', Session.get('duration-estimate-b') - .7)
 	} else {
 		$(room).addClass('checked')
-		console.log('checked')
+		//console.log('checked')
 		Session.set('duration-estimate-b', (Session.get('duration-estimate-b') || 0) + .7)
 	}
 }

@@ -113,24 +113,26 @@ Meteor.methods({
 	removeAll () {
 		ResidentialClients.remove({});
 	},
-	insertProfileInfo (id, address, city, state, zip, phone, email) {
+	insertProfileInfo (id, name, street, city, state, zip, phone, email) {
 		Profile.insert({
 			id: id,
-			address: address,
+			name: name,
+			street: street,
 			city: city,
-			state: state,
+			state: state.toUpperCase(),
 			zip: zip,
 			phone: phone,
 			email: email
 		})
 	},
-	updateProfileInfo (id, address, city, state, zip, phone, email) {
+	updateProfileInfo (id, name, street, city, state, zip, phone, email) {
 		Profile.update({id: id},
 			{$set:
 				{
-					address: address,
+					name: name,
+					street: street,
 					city: city,
-					state: state,
+					state: state.toUpperCase(),
 					zip: zip,
 					phone: phone,
 					email: email

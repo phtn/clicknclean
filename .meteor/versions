@@ -29,6 +29,7 @@ ecmascript@0.4.3
 ecmascript-runtime@0.2.10
 ejson@1.0.11
 elevatedevdesign:feedback@0.0.2
+email@1.0.12
 es5-shim@4.5.10
 facebook@1.2.6
 fastclick@1.0.11
@@ -53,6 +54,8 @@ logging@1.0.12
 materialize:materialize@0.97.5
 meteor@1.1.14
 meteor-base@1.0.4
+meteorhacks:kadira@2.28.6
+meteorhacks:meteorx@1.4.1
 meteortoys:toykit@2.2.1
 minifier-css@1.1.11
 minifier-js@1.1.11
@@ -66,6 +69,7 @@ modweb:arrive@2.1.0
 momentjs:moment@2.13.1
 mongo@1.1.7
 mongo-id@1.0.4
+mongo-livedata@1.0.12
 mquandalle:jade@0.4.9
 mquandalle:jade-compiler@0.4.5
 msavin:mongol@1.6.2

@@ -1,24 +1,47 @@
 template(name='profile')
-	div.container-fluid
-		ul.nav.nav-tabs.nav-justified.title-tab
-			li
-				a.disabled.withoutripple
-					h4.title-category.text-center.title-category User Profile
-	div.container-fluid.text-center
+	div.container-fluid.profile-div
+		span.sign-lbl.animate.fadeInDown PROFILE
+		hr.sign-hr
+	div.container-fluid.text-center.profile-nav
 			ul.nav.nav-tabs.nav-justified.sub-title.grey-background.text-center
 				li
-					a(href='#profile-pane' data-toggle='tab')#profile-tab PROFILE SETTINGS
+					a(href='#profile-pane' data-toggle='tab')#profile-tab ACCOUNT
 				li
-					a(href='#orders-pane' data-toggle='tab')#orders-tab VIEW ORDERS
+					a(href='#orders-pane' data-toggle='tab')#orders-tab ORDERS
 
-	div.tab-content
+	div.tab-content.text-center
 		div.tab-pane.fade#profile-pane
 			div.container-fluid
-				div.panel.panel-material-light-blue-400.set-price
+				div.panel.panel-material-light-blue-300.set-price
 					div.panel-heading
-						h3.panel-title Profile Settings
+						h3.panel-title Account Settings
 					div.panel-body
 						div.container-fluid.text-center
+
+						form
+							div.input-field.col.s12
+								input(type="text").validate#name
+								label(for="name") Name
+							div.input-field.col.s12
+								input(type="text").validate#street
+								label(for="street") Street
+							div.input-field.col.s12
+								input(type="text").validate#city
+								label(for="city") City
+							div.input-field.col.s12
+								input(type="text").validate#state
+								label(for="state") State
+							div.input-field.col.s12
+								input(type="text").validate#zip
+								label(for="Zip") Zip
+							div.input-field.col.s12
+								input(type="text").validate#phone
+								label(for="phone") Phone
+							div.input-field.col.s12
+								input(type="text").validate#email
+								label(for="email") Email
+
+						a.btn.btn-info#save-info SAVE
 						a.btn.btn-primary#logout log out
 		div.tab-pane.fade#orders-pane
 			div.container-fluid

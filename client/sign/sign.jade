@@ -1,0 +1,15 @@
+template(name="sign")
+	div.container-fluid.text-center.sign-div
+		if currentUser
+			+profile
+		else
+
+			p.sign-lbl.animate.fadeInDown SIGN IN WITH
+			hr.sign-hr.animate.fadeInUp
+			a.btn.btn-large.btn-material-red-600.waves-effect.noselect.animated.fadeInUp.google 
+				span.pull-left.fa.fa-google
+				span Google
+			br
+			a.btn.btn-large.btn-material-blue-700.waves-effect.noselect.animated.fadeInUp.facebook 
+				span.pull-left.fa.fa-facebook
+				span Facebook

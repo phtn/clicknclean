@@ -79,3 +79,18 @@ FlowRouter.route('/thanks', {
 	}
 });
 
+FlowRouter.route('/sign', {
+	name: "Sign",
+	action(params) {
+		renderThisTemplate('sign')
+	}
+});
+
+FlowRouter.route('/residential-16', {
+	name: "Residential-16",
+	action(params) {
+		BlazeLayout.render('res')
+	}
+
+})
+

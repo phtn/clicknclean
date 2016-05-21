@@ -1,6 +1,6 @@
 Meteor.subscribe('showUser');
 Template.nav.helpers({
-	user () {
+	username () {
 		return getFirstName(Meteor.user().profile.name)
 	},
 	person () {
@@ -14,9 +14,15 @@ Template.nav.events({
 		FlowRouter.go('/profile')
 	},
 	'click .brand' () {
-		Meteor.call('removeAll')
 		FlowRouter.go('/')
 	},
+	'click .sub-brand' () {
+		FlowRouter.go('/')
+	},
+	'click .user'() {
+		FlowRouter.go('/sign')
+	},
+
 	'click #person-x' () {
 		Feedback.provide('tap')
 
