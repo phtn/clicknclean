@@ -85,6 +85,19 @@ Template.profile.rendered = ()=> {
 	} else {
 		//console.log('no profile on render')
 		$('#name').val(Meteor.user().profile.name).trigger("change");
+
+		let user = Meteor.user();
+
+		if (user.services) {
+			if (user.services.google) {
+				$('#email').val(user.services.google.email).trigger("change");		
+			}
+			if (user.services.facebook) {
+				$('#email').val(user.services.facebook.email).trigger("change");		
+			}
+		}
+
+		
 	}
 
 }
