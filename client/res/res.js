@@ -51,7 +51,19 @@ Template.res.events({
 	'click #patio-minus' () {
 		if (Session.get('patio-count') !== 0)
 			minusOne('patio-count')
-	}
+	},
+	'click #order-check' () {
+		if (Meteor.user()) {
+			Bert.alert({
+				type: 'saved',
+				style: 'fixed-bottom',
+				message: 'Order Submitted',
+				icon: 'fa-check'
+			});
+		} else {
+			FlowRouter.go('/sign')
+		}
+	} 
 });
 
 Template.res.helpers({
@@ -83,8 +95,8 @@ Template.res.helpers({
 
 Template.res.rendered = () => {
 	Session.setDefault('liv-count', 1)
-	Session.setDefault('bed-count', 1)
-	Session.setDefault('bath-count', 1)
+	Session.setDefault('bed-count', 2)
+	Session.setDefault('bath-count', 2)
 	Session.setDefault('kitchen-count', 1)
 	Session.setDefault('basement-count', 0)
 	Session.setDefault('garage-count', 0)

@@ -6,8 +6,16 @@ template(name="res")
 
 					p.back-home.flow-text.pull-left.animated.fadeInRight.waves-effect#arrow-left
 						span.fa.fa-arrow-left
-					p.order-check.flow-text.pull-right.animated.fadeInleft.waves-effect#order-service
-						span.fa.fa-check-circle				
+					div(style="bottom: 40px, right: 20px").fixed-action-button.vertical.fab-div
+						a.pull-right.btn-floating.btn-small#order-check
+							span.fa.fa-check
+						//ul
+							li
+								a.btn-floating.green Order Service
+							li
+								a.btn-floating.blue View Orders	
+					//p.order-check.flow-text.pull-right.animated.fadeInleft.waves-effect#order-service
+						span.fa.fa-2x.fa-check-circle		
 					p.cat-title.flow-text.text-center.animated.fadeInDown#c-title
 						span.total-lbl Total: 
 						span.amount-lbl$ #{totalPrice}
