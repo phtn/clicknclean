@@ -27,13 +27,52 @@ Template.dateTime.events({
 	'click #checkout' () {
 		
 		if ($('#date-input').val() !== "") {
-			
+			let resDoc = Profile.findOne({id: Meteor.userId()});
+
+			function getRoomCount (room, count) {
+				if (Session.get('res-service-type') === 'Total Cleaning Package') {
+					return count
+				} else {
+					return Session.get(room)
+				}
+			};
+
+			Meteor.call('submitOrder',
+
+				Meteor.userId(), 
+				resDoc.name,
+				resDoc.email,
+				resDoc.phone,
+				resDoc.street,
+				resDoc.city,
+				resDoc.state,
+				resDoc.zip,
+				Session.get('hour') + ':' + Session.get('minutes') + Session.get('am-pm'),
+				$('#date-input').val(),
+				null,
+				null,
+				null,
+				Session.get('res-service-type'),
+				getRoomCount('liv-count', 1),
+				getRoomCount('bed-count', 2),
+				getRoomCount('bath-count', 2),
+				getRoomCount('kitchen-count', 1),
+				getRoomCount('basement-count', 0),
+				getRoomCount('garage-count', 0),
+				getRoomCount('patio-count', 0),
+				getRoomCount('total-price', 150),
+				'cash',
+				'pending'
+
+			);
+
 			Bert.alert({
 				type: 'saved',
 				style: 'fixed-bottom',
 				message: 'Order Submitted',
 				icon: 'fa-check'
 			});
+			FlowRouter.go('/thanks');
 		} else {
 			Bert.alert({
 				type: 'saved',

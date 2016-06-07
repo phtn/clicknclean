@@ -47,24 +47,17 @@ template(name='profile')
 			div.container-fluid
 				div.panel.panel-material-light-blue-400.set-price
 					div.panel-heading
-						h3.panel-title Your Orders: #{ownerOrdersCount}
+						p.panel-title
+							span.pull-left #{ownerName}
+							span.pull-right Orders: #{ownerOrdersCount}
 					div.panel-body
-						div.list-group
-							each ownerOrders
-								div.list-group-item
-									div.row-content
-										div.least-content #{month} / #{date} &nbsp; #{time}
-										span.list-group-item-heading
-											i.mdi-action-perm-identity
-												span #{name}
-											i.mdi-communication-call 
-												span #{phone}
-											i.mdi-action-room
-												span #{address} &nbsp; #{city} &nbsp; #{state} &nbsp; #{zip}
-										p Total: $ &nbsp;
-											span #{total}
-										p.float Payment Type: &nbsp;
-											span #{paymentType}
-								hr
-
+						each ownerOrders
+							ul.collection
+								li.collection-item #{serviceType}
+								li.collection-item Date: #{date}
+								li.collection-item Time:  #{time}
+								li.collection-item Total: $ #{total}
+								li.collection-item Payment Type: #{paymentType}
+								li.collection-item Status: #{status}
 		a.btn.btn-primary.btn-material-grey-900#logout log out
+									

@@ -56,12 +56,15 @@ Template.profile.events({
 });
 
 Template.profile.helpers({
+	ownerName () {
+		return Profile.findOne({id: Meteor.userId()}).name
+	},
 	ownerOrdersCount () {
 		return Orders.find({owner: Meteor.userId()}).count()
 	},
 	ownerOrders () {
 		return Orders.find({owner: Meteor.userId()})
-	} 
+	}
 });
 
 Template.profile.rendered = ()=> {
