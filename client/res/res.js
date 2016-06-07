@@ -1,5 +1,5 @@
 Template.res.events({
-	'click #arrow-left' () {
+	'click #arrow-home' () {
 		FlowRouter.go('/');
 		console.log('arrow')
 	},
@@ -52,14 +52,9 @@ Template.res.events({
 		if (Session.get('patio-count') !== 0)
 			minusOne('patio-count')
 	},
-	'click #order-check' () {
+	'click #order-service' () {
 		if (Meteor.user()) {
-			Bert.alert({
-				type: 'saved',
-				style: 'fixed-bottom',
-				message: 'Order Submitted',
-				icon: 'fa-check'
-			});
+			FlowRouter.go('/select-date-time')
 		} else {
 			FlowRouter.go('/sign')
 		}
@@ -105,6 +100,12 @@ Template.res.rendered = () => {
 	
 }
 
+Template.res.onRendered(function(){
+	$('.collapsible').collapsible({
+      accordion : false
+    });
+});
+
 function addOne (name) {
 	Session.setPersistent(name, Session.get(name) + 1);
 	//console.log(Session.get(name, Session.get(name) + 1));
@@ -116,13 +117,14 @@ function minusOne (name) {
 }
 
 function addAllRooms (rm1,rm2,rm3,rm4,rm5,rm6,rm7) {
-	Session.setPersistent('total-price', Session.get(rm1)*50 + Session.get(rm2)*50 + Session.get(rm3)*50 + Session.get(rm4)*50 + Session.get(rm5)*50 + Session.get(rm6)*50)
+	Session.setPersistent('total-price', Session.get(rm1)*50 + Session.get(rm2)*50 + Session.get(rm3)*50 + Session.get(rm4)*50 + Session.get(rm5)*50 + Session.get(rm6)*50 + Session.get(rm7)*50)
 }
 
 Tracker.autorun(function() {
-		addAllRooms('liv-count','bed-count','bath-count','kitchen-count','basement-count','garage-count','patio-count',)
-		
-		if (Session.get('total-price') < 0) {
-			$('.order-service').show()
-		}
-	});
+	addAllRooms('liv-count','bed-count','bath-count','kitchen-count','basement-count','garage-count','patio-count',)
+	
+	if (Session.get('total-price') < 0) {
+		$('.order-service').show()
+	}
+});
+

@@ -167,7 +167,7 @@ Meteor.methods({
 			}
 		)
 	},
-	submitOrder (id, name, email, phone, address, city, state, zip, time, date, month, year, duration, bedroom, bathroom, livingroom, kitchen, basement, garage, yard, total, paymentType, status) {
+	submitOrder (id, name, email, phone, street, city, state, zip, time, date, month, year, duration, bedroom, bathroom, livingroom, kitchen, basement, garage, yard, total, paymentType, status) {
 		Orders.insert({
 			owner: id,
 			name: name,

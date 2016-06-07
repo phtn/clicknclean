@@ -1,11 +1,11 @@
 template(name='profile')
-	div.container-fluid.profile-div
+	div.container-fluid.profile-div.text-center
 		span.sign-lbl.animate.fadeInDown PROFILE
 		hr.sign-hr
 	div.container-fluid.text-center.profile-nav
 			ul.nav.nav-tabs.nav-justified.sub-title.grey-background.text-center
 				li
-					a(href='#profile-pane' data-toggle='tab')#profile-tab ACCOUNT
+					a(href='#profile-pane' data-toggle='tab')#account-tab ACCOUNT
 				li
 					a(href='#orders-pane' data-toggle='tab')#orders-tab ORDERS
 
@@ -14,7 +14,7 @@ template(name='profile')
 			div.container-fluid
 				div.panel.panel-material-light-blue-300.set-price
 					div.panel-heading
-						h3.panel-title Account Settings
+						h3.panel-title Account Info
 					div.panel-body
 						div.container-fluid.text-center
 
@@ -67,4 +67,4 @@ template(name='profile')
 											span #{paymentType}
 								hr
 
-	a.btn.btn-primary#logout log out
+		a.btn.btn-primary.btn-material-grey-900#logout log out

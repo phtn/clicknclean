@@ -1,0 +1,51 @@
+template(name="dateTime")
+	nav.navbar.navbar-fixed-top.navbar-material-grey-900
+		div.container-fluid.nav-div
+			div.navbar-header.header
+				div.col-xs-12.text-center
+
+					p.back-home.flow-text.pull-left.animated.fadeInRight.waves-effect#arrow-res
+						span.fa.fa-arrow-left
+					p.cat-title.flow-text.text-center.animated.fadeInDown#c-title
+						span.total-lbl Select Preferred Date & Time
+	
+	div.container-fluid.date-time-div
+		div.container-fluid.alpha-page-div.up-animate
+			div.panel.panel-material-blue-grey-600
+				div.panel-heading
+					h3.panel-title Pick a Date
+				div.panel-body
+						//span.fa-fa-calendar
+					input(type="date" placeholder="Select Date").text-center.datepicker.flow-text#date-input
+
+
+		//div.container-fluid.text-center
+		div.container-fluid.alpha-page-div.up-animate
+			div.panel.panel-material-blue-grey-600
+				div.panel-heading
+					h3.panel-title Pick Time
+				div.panel-body
+					ul.nav.nav-tabs.nav-justified.sub-title.no-background.text-center
+						li
+							p TIME
+						li
+							p #{hour} : #{mins}
+						li
+							p #{ampm}
+					br
+					div.container-fluid.text-center.time-widget.up-animate
+						div.col-xs-4.col-sm-4.col-md-4.col-lg-4.text-center
+							a.btn.btn-default#plus-hour
+								i.fa.fa-angle-up.fa-2x
+							p.time-lbl#hour #{hour}
+							a.btn.btn-default#minus-hour
+								i.fa.fa-angle-down.fa-2x
+						div.col-xs-4.col-sm-4.col-md-4.col-lg-4
+							p.time-colon-lbl
+								strong :
+						div.col-xs-4.col-sm-4.col-md-4.col-lg-4.time-btn
+							a.btn.btn-flat#zero-thirty
+								p.time-lbl#mins-lbl #{mins}
+
+	div.container-fluid.text-center
+		a(href="#").btn.btn-success#checkout Submit Order

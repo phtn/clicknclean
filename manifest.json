@@ -1,0 +1,13 @@
+{
+	"name": "Web App Manifest",
+	"icons": [
+		{
+			"src": "/assets/img/launcher_icon.png",
+			"type": "image/png",
+			"sizes": "192x192",
+			"density": 4.0
+		}
+	],
+	"orientation": "portrait",
+	"display": "standalone"
+}

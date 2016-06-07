@@ -4,21 +4,23 @@ template(name="res")
 			div.navbar-header.header
 				div.col-xs-12.text-center
 
-					p.back-home.flow-text.pull-left.animated.fadeInRight.waves-effect#arrow-left
+					p.back-home.flow-text.pull-left.animated.fadeInRight.waves-effect#arrow-home
 						span.fa.fa-arrow-left
-					div(style="bottom: 40px, right: 20px").fixed-action-button.vertical.fab-div
+					//div(style="top: 20px, right: 50px").fixed-action-btn.vertical.fab-div
 						a.pull-right.btn-floating.btn-small#order-check
 							span.fa.fa-check
-						//ul
+						ul
 							li
-								a.btn-floating.green Order Service
+								a.btn-floating.green.fa.fa-money#order-service
 							li
-								a.btn-floating.blue View Orders	
-					//p.order-check.flow-text.pull-right.animated.fadeInleft.waves-effect#order-service
-						span.fa.fa-2x.fa-check-circle		
+								a.btn-floating.blue.fa.fa-list-ul#order-view
+							li
+								a(href="tel:2247157926").btn-floating.blue.fa.fa-phone#contact-us
+					p.order-check.flow-text.pull-right.animated.fadeInleft.waves-effect#order-service
+						span.fa.fa-check-circle		
 					p.cat-title.flow-text.text-center.animated.fadeInDown#c-title
 						span.total-lbl Total: 
-						span.amount-lbl$ #{totalPrice}
+						span.amount-lbl $ #{totalPrice}
 					
 
 	div.container-fluid.resid-div
@@ -34,6 +36,38 @@ template(name="res")
 							span.minus.waves-effect.pull-right.fa.fa-minus#liv-minus
 
 						ul.collection
+							li.area-lbl.collection-item
+								//span.fa.fa-th-large
+								span Choose your floor type
+								
+								form(action="#")
+									p
+										input(type="checkbox")#carpet-cb
+										label(for="carpet-cb") Carpet
+									p
+										input(type="checkbox")#hardwood-cb
+										label(for="hardwood-cb") Hardwood
+									p
+										input(type="checkbox")#tile-cb
+										label(for="tile-cb") Tile & Grout
+									p
+										input(type="checkbox")#marble-cb
+										label(for="marble-cb") Marble
+
+								//ul
+									li Carpet
+									li Hardwood
+									li Tile & Grout
+									li Marble
+
+						//ul.collapsible.popout.cpop
+							li
+								div(data-collapsible="accordion").collapsible-header
+									span Floor
+								div.collapsible-body
+									p Carpet
+
+						//ul.collection
 							li.collection-item Carpet Extraction & Shampoo
 								span.pull-right.fa.fa-check-circle-o.checks
 							li.collection-item Hardwood Buff & Polish
@@ -55,13 +89,13 @@ template(name="res")
 							span.plus.waves-effect.pull-right.fa.fa-plus#bed-plus
 							span.minus.waves-effect.pull-right.fa.fa-minus#bed-minus
 						ul.collection
-							li.collection-item Carpet Extraction & Shampoo
+							li.collection-item Full Carpet Shampoo
 								span.pull-right.fa.fa-check-circle-o.checks
-							li.collection-item Hardwood Buff & Polish
+							//li.collection-item Hardwood Buff & Polish
 								span.pull-right.fa.fa-check-circle-o.checks
-							li.collection-item Tile & Grout Powerwash
+							//li.collection-item Tile & Grout Powerwash
 								span.pull-right.fa.fa-check-circle-o.checks
-							li.collection-item Vacuum Couches
+							li.collection-item Polish furnitures
 								span.pull-right.fa.fa-check-circle-o.checks
 							li.collection-item Dust Shelves & Desks
 								span.pull-right.fa.fa-check-circle-o.checks
@@ -80,7 +114,7 @@ template(name="res")
 								span.pull-right.fa.fa-check-circle-o.checks
 							li.collection-item Disinfect entire room
 								span.pull-right.fa.fa-check-circle-o.checks
-							li.collection-item Toilet extensive treatment
+							li.collection-item Toilet Sanitation 
 								span.pull-right.fa.fa-check-circle-o.checks
 							li.collection-item Odor Care
 								span.pull-right.fa.fa-check-circle-o.checks
@@ -163,6 +197,11 @@ template(name="res")
 							li.collection-item Repair & Painting
 								span.pull-right.fa.fa-check-circle-o.checks
 
+
+				
+				
+
+
 				div.media.col-xs-12.col-md-6.col-lg-4.animated.fadeInUp#yard
 					div.media-body
 						p.media-heading.flow-text
@@ -172,6 +211,8 @@ template(name="res")
 								hr
 								a(href="tel:2247157926")
 									span.estimate Call us now for Free Estimate!
+
+				
 	
 	footer.page-footer.text-center
 			div.footer-copyright

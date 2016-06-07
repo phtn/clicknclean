@@ -65,7 +65,8 @@ Template.profile.helpers({
 });
 
 Template.profile.rendered = ()=> {
-	$(Session.get('whichProfileTab')).click();
+	Session.setDefault('profile-tab', '#account-tab')
+	$(Session.get('profile-tab')).click();
 	
 	$('#name').focus();
 

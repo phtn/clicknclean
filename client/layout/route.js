@@ -91,6 +91,11 @@ FlowRouter.route('/residential-16', {
 	action(params) {
 		BlazeLayout.render('res')
 	}
+});
 
-})
-
+FlowRouter.route('/select-date-time', {
+	name: "DateTime",
+	action(params) {
+		BlazeLayout.render('dateTime')
+	}
+});

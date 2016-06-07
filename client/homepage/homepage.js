@@ -47,8 +47,12 @@ Template.homepage.events({
 		check ('#yard-estimate')
 		addPriceEstimate ('#yard-estimate', 50)
 	},
-	'click #res' () {
-		FlowRouter.go('/residential-16');
+	'click .package' () {
+		Session.setPersistent('res-service-type', 'Total Cleaning Package');
+		$('#package-modal').openModal();
+	},
+	'click #custom' () {
+		Session.setPersistent('res-service-type', 'Custom Cleaning')		
 	}
 });
 
@@ -67,6 +71,26 @@ Template.homepage.helpers({
 	},
 	durationEstimate () {
 		return Session.get('duration-estimate')
+	},
+	modalButton () {
+		if (Meteor.user()) {
+			return 'Get this Service';
+			
+			
+
+			Session.setPersistent('userStatus', 'signed')
+		} else {
+			return 'Sign Up'
+		}
+	},
+	modalRoute () {
+		if (Session.get('userStatus') == 'no-file') {
+			return '/sign'
+		} else if (Session.get('userStatus') == 'with-file') {
+			return '/select-date-time'
+		} else {
+			return '/sign'
+		}
 	}
 	
 
@@ -84,9 +108,16 @@ Template.homepage.rendered = () => {
 		Session.set('price-estimate', (Session.get('other-room-estimate') || 0) + (Session.get('bedroom-count')*99 + Session.get('bathroom-count')*99 + Session.get('livingroom-count')*99 ))
 		Session.set('duration-estimate', Math.round((Session.get('bedroom-count')*.5 + Session.get('bathroom-count')*.5 + Session.get('livingroom-count')*.5 ) + (Session.get('duration-estimate-b') || 0 ) ))
 
+		// Check User Status
+		if (Profile.find({id: Meteor.userId()}).count() !== 0) {
+				Session.setPersistent('userStatus', 'with-file')
+		} else {
+			Session.setPersistent('userStatus', 'no-file')
+		}
+
 	});
 	
-	$('.parallax').parallax();	
+	$('.parallax').parallax();
 	
 };
 
