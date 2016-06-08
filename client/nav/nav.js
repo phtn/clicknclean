@@ -14,7 +14,10 @@ Template.nav.events({
 		FlowRouter.go('/profile')
 	},
 	'click .brand' () {
-		FlowRouter.go('/')
+		FlowRouter.go('/');
+		Session.setPersistent('profile-tab', '#accounts-tab')
+		$('#package-modal').closeModal()
+
 	},
 	'click .sub-brand' () {
 		FlowRouter.go('/')

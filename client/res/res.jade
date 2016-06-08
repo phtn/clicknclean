@@ -6,6 +6,7 @@ template(name="res")
 
 					p.back-home.flow-text.pull-left.animated.fadeInRight.waves-effect#arrow-home
 						span.fa.fa-arrow-left
+						span.fa.fa-home#home-icon
 					//div(style="top: 20px, right: 50px").fixed-action-btn.vertical.fab-div
 						a.pull-right.btn-floating.btn-small#order-check
 							span.fa.fa-check
@@ -16,8 +17,9 @@ template(name="res")
 								a.btn-floating.blue.fa.fa-list-ul#order-view
 							li
 								a(href="tel:2247157926").btn-floating.blue.fa.fa-phone#contact-us
-					p.order-check.flow-text.pull-right.animated.fadeInleft.waves-effect#order-service
-						span.fa.fa-check-circle		
+					p.order-check.flow-text.pull-right.animated.fadeInLeft.waves-effect#order-service
+						span.fa.fa-calendar#calendar-icon
+						span.fa.fa-arrow-right#arrow-right
 					p.cat-title.flow-text.text-center.animated.fadeInDown#c-title
 						span.total-lbl Total: 
 						span.amount-lbl $ #{totalPrice}

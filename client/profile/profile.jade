@@ -59,5 +59,32 @@ template(name='profile')
 								li.collection-item Total: $ #{total}
 								li.collection-item Payment Type: #{paymentType}
 								li.collection-item Status: #{status}
+
+		a.btn.btn-success#install-app Install App
 		a.btn.btn-primary.btn-material-grey-900#logout log out
 									
+	div.modal.animated.fadeInUp#install-app-modal
+		div.modal-content
+			p.modal-title.flow-text.text-center 
+				span.fa.fa-info-circle
+				span How to install Web App
+			
+			p.modal-price.flow-text.text-center
+				span.fa.fa-android
+			
+			ul.collection
+				li.collection-item
+					span.pull-left 1 &nbsp;&nbsp; Open Google Chrome &nbsp;&nbsp;
+					span.pull-left.fa.fa-chrome
+				li.collection-item
+					span.pull-left 2 &nbsp;&nbsp;  Tap this button &nbsp;&nbsp; 
+					span.pull-left#more-vert
+						i.material-icons more_vert
+					span.pull-left &nbsp;&nbsp; on the top right.
+				li.collection-item
+					span.pull-left 3 &nbsp;&nbsp; Then tap on 'Add to Home screen'. &nbsp;&nbsp;
+				li.collection-item
+					span.pull-left 4 &nbsp;&nbsp; tap 'ADD'.
+
+
+			a.btn.btn-success#got-it Got it!

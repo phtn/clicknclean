@@ -65,7 +65,7 @@ template(name='homepage')
 				a(href="tel:2247157926").footer-phone 224-715-7926
 
 
-	div.modal#package-modal
+	div.modal.animated.fadeInLeft#package-modal
 		div.modal-content
 			p.modal-title.flow-text.text-center Total Cleaning Service
 			
@@ -79,5 +79,5 @@ template(name='homepage')
 				li.collection-item 1 Kitchen
 
 
-		div.modal-footer
-			a(href="#{modalRoute}").modal-action.modal-close.waves-effect.btn#modal-action #{modalButton}
+		
+			a(href="#{modalRoute}").modal-action.modal-close.waves-effect.btn.btn-success#modal-action #{modalButton}

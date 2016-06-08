@@ -114,7 +114,7 @@ Template.homepage.rendered = () => {
 		} else {
 			Session.setPersistent('userStatus', 'no-file')
 		}
-
+		$('#package-modal').closeModal();
 	});
 	
 	$('.parallax').parallax();

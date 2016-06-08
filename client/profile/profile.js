@@ -4,6 +4,7 @@ Template.profile.events({
 	'click #logout' () {
 		Meteor.logout()
 		FlowRouter.go('/')
+		Session.setPersistent('profile-tab', '#accounts-tab');
 		//Session.set('person-x', 'user')
 		Bert.alert({
 			type: 'logged-out',
@@ -51,6 +52,12 @@ Template.profile.events({
 				icon: 'fa-check'
 			});
 		}	
+	},
+	'click #install-app' () {
+		$('#install-app-modal').openModal();
+	},
+	'click #got-it' () {
+		$('#install-app-modal').closeModal();
 	}
 
 });
