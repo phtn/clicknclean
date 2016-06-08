@@ -63,32 +63,36 @@ template(name='profile')
 		a.btn.btn-success#install-app Install App
 		a.btn.btn-primary.btn-material-grey-900#logout log out
 									
-	div.modal.animated.fadeInUp#install-app-modal
-		div.modal-content
-			p.modal-title.flow-text.text-center 
-				span.fa.fa-info-circle
-				span How to install on 
-				span.fa.fa-android
-			
-			p.modal-price.flow-text.text-center
+		div.modal.animated.fadeInUp.waves-effect#install-app-modal
+			div.modal-content
+				p.modal-title.flow-text.text-center 
+					span.fa.fa-info-circle.pull-left
+					span How to install on 
+					span.fa.fa-android
 				
-			
-			ul.collection
-				li.collection-item
-					span.pull-left 1 &nbsp;&nbsp; Open Google Chrome &nbsp;&nbsp;
-					span.pull-left.fa.fa-chrome
-				li.collection-item
-					span.pull-left 2 &nbsp;&nbsp;  Tap this button &nbsp;&nbsp; 
-					span.pull-left#more-vert
-						i.material-icons more_vert
-					span.pull-left &nbsp;&nbsp; top right.
-				li.collection-item
-					span.pull-left 3 &nbsp;&nbsp; Then tap on 'Add to Home screen'.
-				li.collection-item
-					span.pull-left 4 &nbsp;&nbsp; tap &nbsp;&nbsp;
-					span.pull-left#strong
-						strong ADD
-					span.pull-left .
+				p.modal-price.flow-text.text-center
+					
+				
+				ul.collection
+					li.collection-item
+						span.pull-left.coll-num 1 &nbsp;&nbsp; 
+						span.pull-left Open Google Chrome &nbsp;&nbsp;
+						span.pull-left.fa.fa-chrome
+					li.collection-item#coll-two
+						span.pull-left.coll-num 2 &nbsp;&nbsp;  
+						span.pull-left Tap this button &nbsp;&nbsp; 
+						span.pull-left#more-vert
+							i.material-icons more_vert
+						span.pull-left &nbsp;&nbsp; top right.
+					li.collection-item#coll-three
+						span.pull-left.coll-num 3 &nbsp;&nbsp; 
+						span.pull-left Then tap on 'Add to Home screen'.
+					li.collection-item#coll-four
+						span.pull-left.coll-num 4 &nbsp;&nbsp;
+						span.pull-left tap &nbsp;&nbsp;
+						span.pull-left#strong
+							strong ADD
+						span.pull-left .
 
 
-			a.btn.btn-success#got-it Got it!
+				a.btn.btn-success#got-it Got it!
