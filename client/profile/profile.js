@@ -54,10 +54,10 @@ Template.profile.events({
 		}	
 	},
 	'click #install-app' () {
-		$('#install-app-modal').openModal();
+		//$('#install-app-modal').openModal();
 	},
 	'click #got-it' () {
-		$('#install-app-modal').closeModal();
+		//$('#install-app-modal').closeModal();
 	}
 
 });

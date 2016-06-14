@@ -99,3 +99,24 @@ FlowRouter.route('/select-date-time', {
 		BlazeLayout.render('dateTime')
 	}
 });
+
+FlowRouter.route('/monthly-package', {
+	name: "Monthly Package",
+	action(params) {
+		renderThisTemplate('monthlyRes')
+	}
+});
+
+FlowRouter.route('/install-app', {
+	name: "Install App",
+	action(params) {
+		renderThisTemplate('installApp')
+	}
+});
+
+FlowRouter.route('/admin-tools', {
+	name: "Install App",
+	action(params) {
+		BlazeLayout.render('adminTools')
+	}
+});

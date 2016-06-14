@@ -11,7 +11,8 @@ template(name='homepage')
 						div.card-content
 						div.card-action.text-center
 							
-							p.pr.package.flow-text.waves-effect TOTAL CLEANING SERVICE
+							a(href="/monthly-package")
+								p.pr.package.flow-text.waves-effect TOTAL CLEANING SERVICE
 							//p.price.flow-text.pull-left $ 300
 							
 							p $ 150 / month
@@ -69,15 +70,28 @@ template(name='homepage')
 		div.modal-content
 			p.modal-title.flow-text.text-center Total Cleaning Service
 			
-			p.modal-price.flow-text.text-center $ 150
+			p.modal-price.flow-text.text-center
+				span#original-price $ 300
+				span#discount-price 50% OFF
+				span#promo-price $ 150
 			
 			p This service includes:
 			ul.collection
-				li.collection-item 1 Livingroom
-				li.collection-item 3 Bedrooms
-				li.collection-item 2 Bathrooms
-				li.collection-item 1 Kitchen
+				li.collection-item 
+					span.service-num 1 
+					span Livingroom
+				li.collection-item 
+					span.service-num 3
+					span Bedrooms
+					span.badge#plus-one-room +1
+					
+				li.collection-item
+					span.service-num 2
+					span Bathrooms
+				li.collection-item
+					span.service-num 1
+					span Kitchen
 
 
 		
-			a(href="#{modalRoute}").modal-action.modal-close.waves-effect.btn.btn-success#modal-action #{modalButton}
+			

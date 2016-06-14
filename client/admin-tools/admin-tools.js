@@ -1,5 +1,5 @@
-Meteor.subscribe('showPrices')
-Template.admin.events({
+
+Template.adminTools.events({
 	'click #save-price' () {
 		if (Prices.find({}).count() === 0) {
 			Meteor.call('setPrice',
@@ -44,7 +44,7 @@ Template.admin.events({
 	}
 });
 
-Template.admin.helpers({
+Template.adminTools.helpers({
 	newOrdersCount () {
 		return Orders.find({status: 'new'}).count()
 	},
@@ -65,8 +65,10 @@ Template.admin.helpers({
 	}
 });
 
-Template.admin.rendered = ()=> {
-	Meteor.subscribe('showPrices')
+Template.adminTools.rendered = ()=> {
+	if (Meteor.user().profile.name === 'Jun Lecena') {
+		Meteor.subscribe('showPrices')
+	}
 	let price = Prices.findOne({admin: 'phtn458'})
 	if (Prices.find({admin: 'phtn458'}).count() !== 0) {
 		$('#bedroom-price-input').val(price.bedroom)

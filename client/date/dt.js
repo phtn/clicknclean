@@ -1,6 +1,11 @@
 Template.dateTime.events({
 	'click #arrow-res' () {
-		FlowRouter.go('/residential-16')
+		if (Session.get('res-service-type') === 'Total Cleaning Package') {
+			FlowRouter.go('/')
+		} else {
+			FlowRouter.go('/residential-16')	
+		}
+		
 	},
 	'click #date' () {
 		//FlowRouter.go('/date')
@@ -62,6 +67,7 @@ Template.dateTime.events({
 				getRoomCount('patio-count', 0),
 				getRoomCount('total-price', 150),
 				'cash',
+				'new',
 				'pending'
 
 			);
@@ -77,8 +83,8 @@ Template.dateTime.events({
 			Bert.alert({
 				type: 'saved',
 				style: 'fixed-bottom',
-				message: 'Please Select Date of Service',
-				icon: 'fa-calendar'
+				message: 'Pick a Date',
+				icon: 'fa-calendar-o'
 			});
 		}
 	}

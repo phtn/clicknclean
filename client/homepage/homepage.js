@@ -49,10 +49,15 @@ Template.homepage.events({
 	},
 	'click .package' () {
 		Session.setPersistent('res-service-type', 'Total Cleaning Package');
-		$('#package-modal').openModal();
+		//$('#package-modal').openModal();
+		//FlowRouter.route('/monthly-package')
+		console.log('test')
 	},
 	'click #custom' () {
 		Session.setPersistent('res-service-type', 'Custom Cleaning')		
+	},
+	'click #modal-action' () {
+		$('.modal').closeModal();
 	}
 });
 
@@ -71,26 +76,6 @@ Template.homepage.helpers({
 	},
 	durationEstimate () {
 		return Session.get('duration-estimate')
-	},
-	modalButton () {
-		if (Meteor.user()) {
-			return 'Get this Service';
-			
-			
-
-			Session.setPersistent('userStatus', 'signed')
-		} else {
-			return 'Sign Up'
-		}
-	},
-	modalRoute () {
-		if (Session.get('userStatus') == 'no-file') {
-			return '/sign'
-		} else if (Session.get('userStatus') == 'with-file') {
-			return '/select-date-time'
-		} else {
-			return '/sign'
-		}
 	}
 	
 

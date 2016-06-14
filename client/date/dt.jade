@@ -13,7 +13,9 @@ template(name="dateTime")
 		div.container-fluid.alpha-page-div.up-animate
 			div.panel.panel-material-blue-grey-600
 				div.panel-heading
-					h3.panel-title Pick a Date
+					h3.panel-title 
+						span.fa.fa-calendar-o.dt-icon#pick-date-icon
+						span Date
 				div.panel-body
 						//span.fa-fa-calendar
 					input(type="date" placeholder="Select Date").text-center.datepicker.flow-text#date-input
@@ -23,7 +25,9 @@ template(name="dateTime")
 		div.container-fluid.alpha-page-div.up-animate
 			div.panel.panel-material-blue-grey-600
 				div.panel-heading
-					h3.panel-title Pick Time
+					h3.panel-title 
+						span.fa.fa-clock-o.dt-icon#pick-date-icon
+						span Time
 				div.panel-body
 					ul.nav.nav-tabs.nav-justified.sub-title.no-background.text-center
 						li

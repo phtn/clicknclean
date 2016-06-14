@@ -1,0 +1,34 @@
+template(name='installApp')
+	div.container-fluid.install-app-div
+		p.modal-title.flow-text.text-center 
+					span.fa.fa-info-circle.pull-left
+					span How to install on 
+					span.fa.fa-android
+				
+				p.modal-price.flow-text.text-center
+					
+				
+				ul.collection
+					li.collection-item
+						span.pull-left.coll-num 1 &nbsp;&nbsp; 
+						span.pull-left#coll-one Open in Google Chrome &nbsp;&nbsp;
+						span.pull-left.fa.fa-chrome
+					li.collection-item#coll-two
+						span.pull-left.coll-num 2 &nbsp;&nbsp;  
+						span.pull-left Tap this button &nbsp;&nbsp; 
+						span.pull-left#more-vert
+							i.material-icons more_vert
+						span.pull-left &nbsp;&nbsp; top right.
+					li.collection-item#coll-three
+						span.pull-left.coll-num 3 &nbsp;&nbsp; 
+						span.pull-left Add to Home screen.
+					li.collection-item#coll-four
+						span.pull-left.coll-num 4 &nbsp;&nbsp;
+						span.pull-left#strong
+							strong ADD
+						span.pull-left .
+
+				div.text-center
+					a(href='/profile').btn.btn-success#got-it 
+						span.fa.fa-check
+						span Got it!

@@ -195,6 +195,7 @@ Meteor.methods({
 			total: total,
 			paymentType: paymentType,
 			status: status,
+			deliveryStatus: 'pending',
 			createdAt: new Date()
 		})
 	},

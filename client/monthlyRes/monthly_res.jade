@@ -1,0 +1,37 @@
+template(name='monthlyRes')
+	div.container-fluid.monthly-res-div
+		div.monthly-res-content
+			p.modal-title.flow-text.text-center Total Cleaning Service
+
+			p.modal-price.flow-text.text-center
+				span#original-price $ 300
+				span#discount-price 50% OFF
+				span#promo-price $ 150/mo
+			br
+			p This service includes:
+			ul.collection
+				li.collection-item 
+					span.service-num 1 
+					span Livingroom
+				li.collection-item 
+					span.service-num 3
+					span Bedrooms
+					span.badge#plus-one-room +1
+					
+				li.collection-item
+					span.service-num 2
+					span Bathrooms
+				li.collection-item
+					span.service-num 1
+					span Kitchen
+			
+			div.text-center
+				a(href="#{modalRoute}").waves-effect.btn.btn-success#modal-action #{modalButton}
+
+	footer.page-footer.text-center
+		div.footer-copyright
+			div.col-xs-6
+				p &copy; 2016 Click-n-Clean
+			div.col.xs-6
+				span.fa.fa-phone &nbsp;
+				a(href="tel:2247157926").footer-phone 224-715-7926

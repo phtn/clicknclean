@@ -1,5 +1,10 @@
 {
   "public": {
-
+  	"test": "pass"
+  },
+  "private": {
+  	"l": "admin-tools",
+  	"c": "grwoof299"
   }
+  
 }
