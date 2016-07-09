@@ -30,6 +30,13 @@ FlowRouter.route('/residential', {
 	}
 });
 
+FlowRouter.route('/office-link', {
+	name: "Office",
+	action(params) {
+		renderThisTemplate('office')
+	}
+});
+
 FlowRouter.route('/date', {
 	name: "Date",
 	action(params) {
@@ -114,9 +121,24 @@ FlowRouter.route('/install-app', {
 	}
 });
 
+FlowRouter.route('/billing', {
+	name: "Payments",
+	action(params) {
+		renderThisTemplate('payments')
+	}
+});
+
 FlowRouter.route('/admin-tools', {
 	name: "Install App",
 	action(params) {
 		BlazeLayout.render('adminTools')
 	}
 });
+
+FlowRouter.route('/order-details', {
+	name: "Order Details",
+	action(params) {
+		BlazeLayout.render('orderDetails')
+	}
+});
+

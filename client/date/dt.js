@@ -65,6 +65,7 @@ Template.dateTime.events({
 				getRoomCount('basement-count', 0),
 				getRoomCount('garage-count', 0),
 				getRoomCount('patio-count', 0),
+				getRoomCount('yard-count', 0),
 				getRoomCount('total-price', 150),
 				'cash',
 				'new',

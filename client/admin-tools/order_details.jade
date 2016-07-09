@@ -1,0 +1,110 @@
+template(name='orderDetails')
+	div.container-fluid.order-details-div
+		div.text-center
+			p
+				//span.pull-left.fa.fa-arrow-left
+				span.order-details-title Order Details
+		+if isAdm
+			table.table
+				tbody
+					tr
+						td
+							span.od-lbl name
+						td
+							span.pull-left #{noName}
+					tr
+						td
+							span.od-lbl email
+						td
+							span.pull-left #{noEmail}
+					tr
+						td
+							span.od-lbl phone
+						td
+							span.pull-left #{noPhone}
+					tr
+						td
+							span.od-lbl Street
+						td
+							span.pull-left #{noStreet}
+					tr
+						td
+							span.od-lbl City
+						td
+							span.pull-left #{noCity}
+					tr
+						td
+							span.od-lbl State
+						td
+							span.pull-left #{noState}
+					tr
+						td
+							span.od-lbl Zip
+						td
+							span.pull-left #{noZip}
+					tr
+						td
+							span.od-lbl Service Date
+						td
+							span.pull-left #{noDate}
+					tr
+						td
+							span.od-lbl Service Type
+						td
+							span.pull-left #{noServiceType}
+					tr
+						td
+							span.od-lbl Bedroom
+						td
+							span.pull-left #{noServiceBedroom}
+					tr
+						td
+							span.od-lbl Bathroom
+						td
+							span.pull-left #{noServiceBathroom}
+					tr
+						td
+							span.od-lbl Livingroom
+						td
+							span.pull-left #{noServiceLivingroom}
+					tr
+						td
+							span.od-lbl Kitchen
+						td
+							span.pull-left #{noServiceKitchen}
+					tr
+						td
+							span.od-lbl Basement/Attic
+						td
+							span.pull-left #{noServiceBasement}
+					tr
+						td
+							span.od-lbl Garage
+						td
+							span.pull-left #{noServiceGarage}
+					tr
+						td
+							span.od-lbl Patio/deck
+						td
+							span.pull-left #{noServicePatio}
+					tr
+						td
+							span.od-lbl Yard
+						td
+							span.pull-left #{noServiceYard}
+					tr
+						td
+							span.od-lbl Total
+						td
+							span.pull-left $ #{noTotal}
+					tr
+						td
+							span.od-lbl Order Date
+						td
+							span.pull-left #{noCreatedAt}
+
+		+else
+			div.text-center
+				span Access Denied!
+			div.text-center
+				span.fa.fa-gear.fa-spin Tracing IP address...

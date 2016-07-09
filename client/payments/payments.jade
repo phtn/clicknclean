@@ -1,0 +1,93 @@
+template(name='payments')
+	div.text-center
+		div.card.small#cc-card
+				div.card-content
+					p
+						span Credit Card info
+		div.card.small#cc-card
+				div.card-content
+					p
+						span Credit Card info
+		div.card.small#cc-card
+				div.card-content
+					p
+						span Credit Card info
+
+						
+	div.container-fluid.text-center.payments-div
+
+		
+		
+
+		div.panel.panel-material-purple-700.store-panel
+			div.panel-heading.text-center
+				h5.panel-title 
+					span.ion-cash &nbsp;&nbsp;&nbsp;
+					span ADD PAYMENT METHOD &nbsp;
+			div.panel-body
+
+				// BILLING ADDRESS PANEL
+				div.payment-outer-panel.col-md-8
+					div.payment-panel-billing
+						h6
+							span.ion-email &nbsp;&nbsp;
+							span ENTER BILLING ADDRESS
+							hr
+					form(action="#")
+						p
+							input(type="checkbox")#carpet-cb
+							label(for="carpet-cb") Same address on file
+
+						if notSameAsShipping 
+							+autoForm id='addBillingAddress' type='insert' collection='BillingAddress'
+								h6.credit-card-label.pull-left ADDRESS
+								+afQuickField name='address' placeholder='Street Address'
+								h6.credit-card-label.pull-left CITY
+								+afQuickField name='city' placeholder='City'
+								h6.credit-card-label.pull-left STATE
+								+afQuickField name='state' placeholder='State'
+								h6.credit-card-label.pull-left ZIP CODE
+								+afQuickField name='zip' placeholder='Zip Code'
+								button(type='submit').btn.btn-primary SAVE BILLING ADDRESS
+						else
+							h6.credit-card-label.pull-left ADDRESS
+							input(type='text' placeholder='Street Address' value='#{shipping.address}').form-control.same-input#billing-address
+
+							h6.credit-card-label.pull-left CITY
+							input(type='text' placeholder='City' value='#{shipping.city}').form-control.same-input#billing-city
+							h6.credit-card-label.pull-left STATE
+							input(type='text' placeholder='State' value='#{shipping.state}').form-control.same-input#billing-state
+							h6.credit-card-label.pull-left ZIP CODE
+							input(type='text' placeholder='Zip Code' value='#{shipping.zip}').form-control.same-input#billing-zip
+				
+				// CREDIT CARD PANEL
+				div.payment-outer-panel.col-md-4
+					div.payment-panel
+						h6
+							span.ion-card &nbsp;&nbsp;
+							span CREDIT CARD INFO
+						hr
+						if hasCardInfo	
+							+autoForm id='addCreditCard' type='insert' collection='PaymentInfo'
+								h6.credit-card-label.pull-left CARD NUMBER
+								+afQuickField name='creditCard'
+								h6.credit-card-label.pull-left CVC
+								+afQuickField name='cvc'
+								h6.credit-card-label.pull-left EXPIRATION DATE
+								+afQuickField name='expiration'
+								br
+								button(type='submit').btn.btn-primary SAVE CREDIT CARD
+
+						else
+							h6.credit-card-label.pull-left CARD NUMBER &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **** - **** - **** - 
+							
+							h6.credit-card-label.pull-left &nbsp; #{cardNumber}
+								span.ion-close-round#remove-card
+							br
+							br
+							div.container-fluid.text-center
+								button.btn.btn-info#submit-order submit order
+
+
+				
+

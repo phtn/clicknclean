@@ -167,7 +167,7 @@ Meteor.methods({
 			}
 		)
 	},
-	submitOrder (id, name, email, phone, street, city, state, zip, time, date, month, year, duration, serviceType, bedroom, bathroom, livingroom, kitchen, basement, garage, yard, total, paymentType, status) {
+	submitOrder (id, name, email, phone, street, city, state, zip, time, date, month, year, duration, serviceType, bedroom, bathroom, livingroom, kitchen, basement, garage, patio, yard, total, paymentType, status) {
 		Orders.insert({
 			owner: id,
 			name: name,
@@ -190,6 +190,7 @@ Meteor.methods({
 				kitchen: kitchen,
 				basement: basement,
 				garage: garage,
+				patio: patio,
 				yard: yard
 			},
 			total: total,
@@ -205,6 +206,12 @@ Meteor.methods({
 				status: status
 			}}
 		)
+	},
+	removeOrder (id) {
+		Orders.remove({_id: id})
+	},
+	removeAllOrders () {
+		Orders.remove({})
 	}
 	
 
